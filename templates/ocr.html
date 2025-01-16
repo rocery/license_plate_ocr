@@ -194,11 +194,19 @@
                 const tdNo = document.createElement('td');
                 tdNo.textContent = row[0];
                 tr.appendChild(tdNo);
-    
-                const tdPlatNomor = document.createElement('td');
-                tdPlatNomor.textContent = row[3];
-                tr.appendChild(tdPlatNomor);
-    
+                
+                if (row[6] === 'MARKED') {
+                    const tdPlatNomor = document.createElement('td');
+                    const text = document.createTextNode(row[3]);
+                    tdPlatNomor.appendChild(text);
+                    tdPlatNomor.style.color = 'red';
+                    tr.appendChild(tdPlatNomor);
+                } else {
+                    const tdPlatNomor = document.createElement('td');
+                    tdPlatNomor.textContent = row[3];
+                    tr.appendChild(tdPlatNomor);
+                }
+                
                 const tdKategori = document.createElement('td');
                 tdKategori.textContent = row[2];
                 tr.appendChild(tdKategori);

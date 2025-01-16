@@ -21,16 +21,17 @@ def fast_alpr_process(image):
         return False
     
     fast_alpr_data = []
+    print(fast_alpr_result)
     
     for data in fast_alpr_result:
         # Get detection confidence
-        detection_confidence = data.detection.confidence
+        ocr_confidence = data.ocr.confidence
         # Get bounding box
         bounding_box = data.detection.bounding_box
         # Get OCR text
         ocr_text = data.ocr.text
 
-        fast_alpr_data.append(round(detection_confidence, 2) * 100)
+        fast_alpr_data.append(round(ocr_confidence, 2))
         fast_alpr_data.append(bounding_box.x1)
         fast_alpr_data.append(bounding_box.y1)
         fast_alpr_data.append(bounding_box.x2)

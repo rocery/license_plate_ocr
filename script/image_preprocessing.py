@@ -3,6 +3,8 @@ from PIL import Image, ImageDraw, ExifTags, UnidentifiedImageError
 import os
 # from .csv_process import data_photo_uploaded
 import csv
+import base64
+from io import BytesIO
 
 folder_upload = 'img_ocr/upload/'
 csv_data_photo_uploaded = 'img_ocr/upload.csv'
@@ -282,3 +284,16 @@ def save_photo_processed(cropped_image, action, ocr_result, confidence, date, ti
 # )
 
 # print(a)
+
+def numpy_to_base64(image_np):
+    # Convert NumPy array to PIL Image
+    pil_image = Image.fromarray(cv2.cvtColor(image_np, cv2.COLOR_BGR2RGB))
+    
+    # Save the PIL image to a BytesIO buffer
+    buffer = BytesIO()
+    pil_image.save(buffer, format="JPEG")
+    
+    # Encode the image to base64
+    img_str = base64.b64encode(buffer.getvalue()).decode()
+    
+    return f"data:image/jpeg;base64,{img_str}"

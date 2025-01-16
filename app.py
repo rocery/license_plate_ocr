@@ -2,7 +2,8 @@ from flask import Flask, session, request, render_template, flash, redirect, url
 import time
 from script.csv_process import read_data_csv
 from script.fast_alpr_script import fast_alpr_process
-from script.image_preprocessing import change_image_orientation_to_verical, crop_and_save_image
+from script.image_preprocessing import change_image_orientation_to_verical, crop_and_save_image, numpy_to_base64
+import cv2
 
 app = Flask(__name__)
 app.secret_key = 'itbekasioke'
@@ -73,10 +74,13 @@ def ocr():
                 # image, x1, y1, x2, y2, action, ocr_result, confidence, datetime, date, time, marker
                 save = crop_and_save_image(image, fast_alpr[1], fast_alpr[2], fast_alpr[3], fast_alpr[4], action, fast_alpr[5], fast_alpr[0], time_str, date_, time_, marked)
                 
+                data = cv2.imread(save[0])
+                img = numpy_to_base64(data)
+                
                 if save is None:
                     return render_template('ocr.html', message='Proses Menyimpan Data Gagal.', message_type='danger')
                 
-                return render_template('ocr.html', message=fast_alpr, message_type='success')
+                return render_template('ocr.html', message=fast_alpr, data=img, message_type='success')
             
             except:
                 return render_template('ocr.html', message='Gagal Memproses Gambar. Mohon Untuk Input Ulang.', message_type='danger')
