@@ -1,6 +1,6 @@
-from flask import Flask, session, request, render_template, flash, redirect, url_for
+from flask import Flask, session, request, render_template, flash, redirect, url_for, jsonify
 import time
-
+from script.csv_process import read_data_csv
 from script.fast_alpr_script import fast_alpr_process
 from script.image_preprocessing import change_image_orientation_to_verical, crop_and_save_image
 
@@ -90,6 +90,11 @@ def isMarked(plate):
             plate[2:6].isdigit() and   # Middle 4 are digits
             plate[6:].isalpha()        # Last two are letters
         )
+    
+@app.route("/ocr/get_data_all_ocr")
+def get_data_all_ocr():
+    data = read_data_csv()
+    return jsonify(data)
 
 if __name__ == '__main__':
     app.run(
