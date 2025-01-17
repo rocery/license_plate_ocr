@@ -86,8 +86,34 @@ def ocr():
             
             except:
                 return render_template('ocr.html', message='Gagal Memproses Gambar. Mohon Untuk Input Ulang.', message_type='danger')
-                
+        
+        """
+        Algoritma proses Masuk/Keluar
+        1. Masuk
+           - Cek Jenis Kendaraan
+             - Eskpedisi
+               - Cek Data Ekspedisi
+               - Proses Masuk, Jika sudah ada data masuk gagalkan, return OKE
+               - Jika belum terdaftar return waring, jika sudah ada gagalkan return waring
+             - GA
+               - Cek apakah benar kendaraan GA, jika benar lanjut, jika gagal return error
+               - Proses Masuk, Jika sudah ada gagalkan return OKE
+             - Tamu
+               - Proses Masuk, Jika sudah ada gagalkan return OKE
+             - Else
+               - return danger
+               
+        2. Keluar
+           - Proses Keluar
+           - Jika sudah ada data keluar gagalkan, return OKE
+        """
+              
         if action == 'Masuk':
+            
+            return render_template('ocr.html', message='Gagal Memproses Gambar. Mohon Untuk Input Ulang.', message_type='danger')
+        elif action == 'Keluar':
+            return render_template('ocr.html', message='Gagal Memproses Gambar. Mohon Untuk Input Ulang.', message_type='danger')
+        else:
             return render_template('ocr.html', message='Gagal Memproses Gambar. Mohon Untuk Input Ulang.', message_type='danger')
     return render_template('ocr.html')
 
