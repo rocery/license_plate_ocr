@@ -25,6 +25,8 @@ def login_ocr():
     
     return render_template('login.html')
 
+fast_alpr = None
+data = None
 @app.route('/ocr', methods=['GET', 'POST'])
 def ocr():
     if not session.get('authenticated'):
@@ -80,11 +82,13 @@ def ocr():
                 if save is None:
                     return render_template('ocr.html', message='Proses Menyimpan Data Gagal.', message_type='danger')
                 
-                return render_template('ocr.html', message=fast_alpr, data=img, message_type='success')
+                # return render_template('ocr.html', message=fast_alpr, data=img, message_type='success')
             
             except:
                 return render_template('ocr.html', message='Gagal Memproses Gambar. Mohon Untuk Input Ulang.', message_type='danger')
                 
+        if action == 'Masuk':
+            return render_template('ocr.html', message='Gagal Memproses Gambar. Mohon Untuk Input Ulang.', message_type='danger')
     return render_template('ocr.html')
 
 def isMarked(plate):
