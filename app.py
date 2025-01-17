@@ -107,10 +107,19 @@ def ocr():
            - Proses Keluar
            - Jika sudah ada data keluar gagalkan, return OKE
         """
+        
+        # Add for git
               
         if action == 'Masuk':
             
-            return render_template('ocr.html', message='Gagal Memproses Gambar. Mohon Untuk Input Ulang.', message_type='danger')
+            if entryType == 'Eskpedisi':
+                return render_template('ocr.html', message='Gagal Memproses Gambar. Mohon Untuk Input Ulang.', message_type='danger')
+            elif entryType == 'GA':
+                return render_template('ocr.html', message='Gagal Memproses Gambar. Mohon Untuk Input Ulang.', message_type='danger')
+            elif entryType == 'Tamu':
+                return render_template('ocr.html', message='Gagal Memproses Gambar. Mohon Untuk Input Ulang.', message_type='danger')
+            else:
+                return render_template('ocr.html', message='Gagal Memproses Gambar. Mohon Untuk Input Ulang.', message_type='danger')
         elif action == 'Keluar':
             return render_template('ocr.html', message='Gagal Memproses Gambar. Mohon Untuk Input Ulang.', message_type='danger')
         else:
