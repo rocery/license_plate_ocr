@@ -44,7 +44,9 @@ def ocr():
         try:
             entryType = request.form['entryType']
         except:
-            return render_template('ocr.html', message='Jenis Kendaraan Tidak Valid. Mohon Untuk Input Ulang.', message_type='danger')
+            message = 'Jenis Kendaraan Tidak Diketahui. Input Ekspedisi, Tamu atau GA. 0x1'
+            message_type = 'danger'
+            return render_template('ocr.html', message=message, message_type=message_type)
         
         if action == False or image == False or entryType == False:
             return render_template('ocr.html', message='Form Tidak Lengkap. Mohon Untuk Input Ulang.', message_type='danger')  
@@ -122,12 +124,12 @@ def ocr():
               
         if action == 'Masuk':
             last_loc = None
-            if entryType == 'Eskpedisi':
+            if entryType == 'Ekspedisi':
                 ekspedisi = get_ekspedisi(label)
                 
                 if ekspedisi is not None:
                     last_loc = proses_masuk_sql(date_, label, time_, 'security', ekspedisi[0])
-
+                    
                     if last_loc:
                         message = 'Ekspedisi: {} Sudah Didalam. Tidak Bisa Diproses Masuk 2x.'.format(label)
                         message_type = 'danger'
@@ -137,10 +139,16 @@ def ocr():
                         message_type = 'success'
                         return render_template('ocr.html', message=message, message_type=message_type, data=data, label=label, type=ekspedisi)
                 else:
-                    proses_masuk_sql(date_, label, time_, 'security', entryType)
-                    message = 'Ekspedisi: {} Tidak Terdaftar. Proses Tetap Dilanjutkan.'.format(label)
-                    message_type = 'warning'
-                    return render_template('ocr.html', message=message, message_type=message_type, data=data, label=label)
+                    last_loc = proses_masuk_sql(date_, label, time_, 'security', entryType)
+                    
+                    if last_loc:
+                        message = 'Ekspedisi: {} Sudah Didalam. Tidak Bisa Diproses Masuk 2x.'.format(label)
+                        message_type = 'danger'
+                        return render_template('ocr.html', message=message, message_type=message_type, data=data, label=label)
+                    else:
+                        message = 'Ekspedisi: {} Tidak Terdaftar. Proses Tetap Dilanjutkan.'.format(label)
+                        message_type = 'warning'
+                        return render_template('ocr.html', message=message, message_type=message_type, data=data, label=label)
                 
             elif entryType == 'GA':
                 status_kendaraan_ga = get_kendaraan_ga(label)
@@ -156,7 +164,7 @@ def ocr():
                         message_type = 'success'
                         return render_template('ocr.html', message=message, message_type=message_type, data=data, label=label)
                 else:
-                    message = 'GA: {} Tidak Terdaftar Sebagai GA.'.format(label)
+                    message = '{} Tidak Terdaftar Sebagai GA.'.format(label)
                     message_type = 'danger'
                     return render_template('ocr.html', message=message, message_type=message_type, data=data, label=label)
                 
@@ -178,8 +186,8 @@ def ocr():
             
         elif action == 'Keluar':
             last_loc = proses_keluar_sql(date_, label, time_, 'security', km)
-            if last_loc == 'keluar':
-                message = 'Kendaraan: {} Sudah Didalam. Tidak Bisa Diproses Keluar 2x.'.format(label)
+            if last_loc:
+                message = 'Kendaraan: {} Sudah Diluar. Tidak Bisa Diproses Keluar 2x.'.format(label)
                 message_type = 'danger'
                 return render_template('ocr.html', message=message, message_type=message_type, data=data, label=label)
             else:

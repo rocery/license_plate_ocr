@@ -61,7 +61,7 @@ def proses_masuk_sql(tanggal, no_mobil, jam_masuk_pabrik, user_in, ekspedisi, km
     
     # Jika terdapat data hasil dari query diatas maka return masuk
     if check_last_status:
-        return True
+        return 'didalam'
     
     # Jika data tidak ada maka insert data ke db
     cursor_masuk.execute("""
@@ -90,7 +90,7 @@ def proses_keluar_sql(tanggal, no_mobil, jam_keluar_pabrik, user_out, km = None)
     result = cursor_keluar.fetchone()
     
     if not result:
-        return 'keluar'
+        return True
     
     cursor_keluar.execute("""
         UPDATE ocr
