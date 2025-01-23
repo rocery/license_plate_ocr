@@ -4,7 +4,8 @@ import cv2
 from script.csv_process import read_data_csv
 from script.fast_alpr_script import fast_alpr_process
 from script.image_preprocessing import change_image_orientation_to_verical, crop_and_save_image, numpy_to_base64
-from script.sql_db import get_ekspedisi, proses_masuk_sql, proses_keluar_sql, get_kendaraan_ga
+from script.sql_db import edit_tamu_sql, list_ekspedisi_sql, list_ga_sql, all_data_sql, list_tamu, get_ekspedisi, proses_masuk_sql, proses_keluar_sql, get_kendaraan_ga
+import re
 
 app = Flask(__name__)
 app.secret_key = 'itbekasioke'
@@ -214,6 +215,52 @@ def isMarked(plate):
 def get_data_all_ocr():
     data = read_data_csv()
     return jsonify(data)
+
+STRING_REGEX = re.compile(r"^[A-Za-z\s]+$")
+@app.route("/ocr/edit_tamu", methods=['GET', 'POST'])
+def edit_tamu():
+    if not session.get('authenticated'):
+        return redirect(url_for('login_ocr'))
+    
+    list_keperluan = ['Interview', 'BS', 'Sampah', 'Tamu', 'Sales', 'Lainnya']
+    data = list_tamu()
+    
+    if request.method == 'POST':
+        try:
+            no_mobil = request.form['noMobil']
+            pic_stt = request.form['picSTT']
+            keperluan = request.form['keperluan']
+            datetime = request.form['dateTime']
+        except:
+            print("Data tidak ada")
+            
+        print(f"{no_mobil}, {pic_stt}, {keperluan}, {datetime}")
+            
+        if not STRING_REGEX.match(pic_stt):
+            flash('Input PIC STT harus berupa huruf.', 'danger')
+            return redirect(url_for('edit_tamu'))
+            
+        status_edit = edit_tamu_sql(datetime, no_mobil, keperluan, pic_stt)
+        if status_edit != False:
+            flash(f'Data Tamu {no_mobil} Berhasil Diperbarui.', 'success')
+            return redirect(url_for('edit_tamu'))
+    
+    return render_template('edit_tamu.html', list_tamu=data, list_keperluan=list_keperluan)
+
+@app.route("/ocr/list_ga")
+def list_ga():
+    data = list_ga_sql()
+    return render_template('list_ga.html', data = data)
+
+@app.route("/ocr/list_ekspedisi")
+def list_ekspedisi():
+    data = list_ekspedisi_sql()
+    return render_template('list_ekspedisi.html', data = data)
+
+@app.route("/ocr/data_ocr")
+def data_ocr():
+    data = all_data_sql()
+    return render_template('data_ocr.html', data = data)
 
 if __name__ == '__main__':
     app.run(
