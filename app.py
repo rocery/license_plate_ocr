@@ -76,13 +76,13 @@ def ocr():
                 # image, x1, y1, x2, y2, action, ocr_result, confidence, datetime, date, time, marker
                 save = crop_and_save_image(image, fast_alpr[1], fast_alpr[2], fast_alpr[3], fast_alpr[4], action, fast_alpr[5], fast_alpr[0], time_str, date_, time_, marked)
                 
-                data = cv2.imread(save[0])
-                img = numpy_to_base64(data)
+                img_temp = cv2.imread(save[0])
+                data = numpy_to_base64(img_temp)
                 
                 if save is None:
                     return render_template('ocr.html', message='Proses Menyimpan Data Gagal.', message_type='danger')
                 
-                # return render_template('ocr.html', message=fast_alpr, data=img, message_type='success')
+                # return render_template('ocr.html', message=fast_alpr, data=data, message_type='success')
             
             except:
                 return render_template('ocr.html', message='Gagal Memproses Gambar. Mohon Untuk Input Ulang.', message_type='danger')
