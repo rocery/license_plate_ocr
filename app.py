@@ -1,9 +1,10 @@
 from flask import Flask, session, request, render_template, flash, redirect, url_for, jsonify
 import time
+import cv2
 from script.csv_process import read_data_csv
 from script.fast_alpr_script import fast_alpr_process
 from script.image_preprocessing import change_image_orientation_to_verical, crop_and_save_image, numpy_to_base64
-import cv2
+from script.sql_db import get_ekspedisi, proses_masuk_sql, proses_keluar_sql, get_kendaraan_ga
 
 app = Flask(__name__)
 app.secret_key = 'itbekasioke'
@@ -27,6 +28,10 @@ def login_ocr():
 
 fast_alpr = None
 data = None
+label = None # Hasil dari ocr plat nomor
+date_ = None
+time_ = None
+
 @app.route('/ocr', methods=['GET', 'POST'])
 def ocr():
     if not session.get('authenticated'):
@@ -68,7 +73,12 @@ def ocr():
                     return render_template('ocr.html', message='Tidak Terdeteksi Plat Nomor atau Plat Nomor Lebih dari 1. Mohon Untuk Input Ulang.', message_type='danger')
                 
                 # Dikarenakan model hanya mampu memproses maksimal 8 digit, jika ada yang lebih dari atau sama maka akan dicek ulang
-                if isMarked(fast_alpr[5]):
+                label = fast_alpr[5]
+                
+                # Kode dibawah memungkinkan memproses data jika plat nomor tidak bisa diproses OCR
+                # label = check_untained_data()
+                
+                if isMarked(label):
                     marked = "MARKED"
                 else:
                     marked = ""
@@ -84,7 +94,7 @@ def ocr():
                 
                 # return render_template('ocr.html', message=fast_alpr, data=data, message_type='success')
             
-            except:
+            except (IOError, SyntaxError):
                 return render_template('ocr.html', message='Gagal Memproses Gambar. Mohon Untuk Input Ulang.', message_type='danger')
         
         """
@@ -111,19 +121,77 @@ def ocr():
         # Add for git
               
         if action == 'Masuk':
-            
+            last_loc = None
             if entryType == 'Eskpedisi':
-                return render_template('ocr.html', message='Gagal Memproses Gambar. Mohon Untuk Input Ulang.', message_type='danger')
+                ekspedisi = get_ekspedisi(label)
+                
+                if ekspedisi is not None:
+                    last_loc = proses_masuk_sql(date_, label, time_, 'security', ekspedisi[0])
+
+                    if last_loc:
+                        message = 'Ekspedisi: {} Sudah Didalam. Tidak Bisa Diproses Masuk 2x.'.format(label)
+                        message_type = 'danger'
+                        return render_template('ocr.html', message=message, message_type=message_type, data=data, label=label)
+                    else:
+                        message = 'Ekspedisi: {} Berhasil Masuk.'.format(label)
+                        message_type = 'success'
+                        return render_template('ocr.html', message=message, message_type=message_type, data=data, label=label, type=ekspedisi)
+                else:
+                    proses_masuk_sql(date_, label, time_, 'security', entryType)
+                    message = 'Ekspedisi: {} Tidak Terdaftar. Proses Tetap Dilanjutkan.'.format(label)
+                    message_type = 'warning'
+                    return render_template('ocr.html', message=message, message_type=message_type, data=data, label=label)
+                
             elif entryType == 'GA':
-                return render_template('ocr.html', message='Gagal Memproses Gambar. Mohon Untuk Input Ulang.', message_type='danger')
+                status_kendaraan_ga = get_kendaraan_ga(label)
+                
+                if status_kendaraan_ga:
+                    last_loc = proses_masuk_sql(date_, label, time_, 'security', entryType, km)
+                    if last_loc:
+                        message = 'GA: {} Sudah Didalam. Tidak Bisa Diproses Masuk 2x.'.format(label)
+                        message_type = 'danger'
+                        return render_template('ocr.html', message=message, message_type=message_type, data=data, label=label)
+                    else:
+                        message = 'GA: {} Berhasil Masuk.'.format(label)
+                        message_type = 'success'
+                        return render_template('ocr.html', message=message, message_type=message_type, data=data, label=label)
+                else:
+                    message = 'GA: {} Tidak Terdaftar Sebagai GA.'.format(label)
+                    message_type = 'danger'
+                    return render_template('ocr.html', message=message, message_type=message_type, data=data, label=label)
+                
             elif entryType == 'Tamu':
-                return render_template('ocr.html', message='Gagal Memproses Gambar. Mohon Untuk Input Ulang.', message_type='danger')
+                last_loc = proses_masuk_sql(date_, label, time_, 'security', entryType)
+                if last_loc:
+                    message = 'Tamu: {} Sudah Didalam. Tidak Bisa Diproses Masuk 2x.'.format(label)
+                    message_type = 'danger'
+                    return render_template('ocr.html', message=message, message_type=message_type, data=data, label=label)
+                else:
+                    message = 'Tamu: {} Berhasil Masuk. Hubungi Admin Untuk Pengisian Data PIC dan Keperluan.'.format(label)
+                    message_type = 'success'
+                    return render_template('ocr.html', message=message, message_type=message_type, data=data, label=label)
+            
             else:
-                return render_template('ocr.html', message='Gagal Memproses Gambar. Mohon Untuk Input Ulang.', message_type='danger')
+                message = 'Jenis Kendaraan Tidak Diketahui. Input Ekspedisi, Tamu atau GA.'
+                message_type = 'danger'
+                return render_template('ocr.html', message=message, message_type=message_type)
+            
         elif action == 'Keluar':
-            return render_template('ocr.html', message='Gagal Memproses Gambar. Mohon Untuk Input Ulang.', message_type='danger')
+            last_loc = proses_keluar_sql(date_, label, time_, 'security', km)
+            if last_loc == 'keluar':
+                message = 'Kendaraan: {} Sudah Didalam. Tidak Bisa Diproses Keluar 2x.'.format(label)
+                message_type = 'danger'
+                return render_template('ocr.html', message=message, message_type=message_type, data=data, label=label)
+            else:
+                message = 'Kendaraan: {} Berhasil Keluar.'.format(label)
+                message_type = 'success'
+                return render_template('ocr.html', message=message, message_type=message_type, data=data, label=label)
+         
         else:
-            return render_template('ocr.html', message='Gagal Memproses Gambar. Mohon Untuk Input Ulang.', message_type='danger')
+            message = 'Tujuan Tidak Diketahui. Input Masuk atau Keluar'
+            message_type = 'danger'
+            return render_template('ocr.html', message=message, message_type=message_type)
+            
     return render_template('ocr.html')
 
 def isMarked(plate):
