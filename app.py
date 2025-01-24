@@ -2,7 +2,7 @@ from flask import Flask, session, request, render_template, flash, redirect, url
 import time
 import cv2
 from script.csv_process import read_data_csv
-from script.fast_alpr_script import fast_alpr_process
+from script.fast_alpr_script import fast_alpr_process, check_untrained_data, isMarked
 from script.image_preprocessing import change_image_orientation_to_verical, crop_and_save_image, numpy_to_base64
 from script.sql_db import edit_tamu_sql, list_ekspedisi_sql, list_ga_sql, all_data_sql, list_tamu, get_ekspedisi, proses_masuk_sql, proses_keluar_sql, get_kendaraan_ga
 import re
@@ -79,7 +79,7 @@ def ocr():
                 label = fast_alpr[5]
                 
                 # Kode dibawah memungkinkan memproses data jika plat nomor tidak bisa diproses OCR
-                # label = check_untained_data()
+                # label = check_untrained_data()
                 
                 if isMarked(label):
                     marked = "MARKED"
@@ -202,14 +202,6 @@ def ocr():
             return render_template('ocr.html', message=message, message_type=message_type)
             
     return render_template('ocr.html')
-
-def isMarked(plate):
-    if len(plate) == 8:
-        return (
-            plate[:2].isalpha() and    # First two are letters
-            plate[2:6].isdigit() and   # Middle 4 are digits
-            plate[6:].isalpha()        # Last two are letters
-        )
     
 @app.route("/ocr/get_data_all_ocr")
 def get_data_all_ocr():
@@ -223,7 +215,7 @@ def edit_tamu():
         return redirect(url_for('login_ocr'))
     
     list_keperluan = ['Interview', 'BS', 'Sampah', 'Tamu', 'Sales', 'Lainnya']
-    data = list_tamu()
+    data_tamu = list_tamu()
     
     if request.method == 'POST':
         try:
@@ -245,7 +237,7 @@ def edit_tamu():
             flash(f'Data Tamu {no_mobil} Berhasil Diperbarui.', 'success')
             return redirect(url_for('edit_tamu'))
     
-    return render_template('edit_tamu.html', list_tamu=data, list_keperluan=list_keperluan)
+    return render_template('edit_tamu.html', list_tamu=data_tamu, list_keperluan=list_keperluan)
 
 @app.route("/ocr/list_ga")
 def list_ga():

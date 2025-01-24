@@ -58,3 +58,33 @@ def fast_alpr_process(image):
 # a = cv2.imread("a.jpeg")
 
 # print(fast_alpr_process(a))
+
+def check_untrained_data(plate):
+    plate_ = None
+    if len(plate) >= 6 and plate[:2].isalpha() and plate[2:6].isdigit() and plate[6:].isalpha():
+        plate_ = plate[:6]
+        
+        # Data Mapping dilihat dari data dari data 'Marked' pada file /img_ocr_ocr/ocr/all_ocr.csv
+        mapping = {
+            "AB1234": "AB1234CAY",
+            "AV4123": "AV4123GAL",
+            "BE3213": "BE3213AMD"
+        }
+        
+        if plate_ in mapping:
+            plate_ = mapping[plate_]
+        else:
+            plate_ = plate
+        
+    else:
+        plate_ = plate
+        
+    return plate_
+
+def isMarked(plate):
+    if len(plate) == 8:
+        return (
+            plate[:2].isalpha() and    # First two are letters
+            plate[2:6].isdigit() and   # Middle 4 are digits
+            plate[6:].isalpha()        # Last two are letters
+        )

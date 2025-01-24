@@ -53,3 +53,532 @@ INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:17:20] "[36mGET /static/js/pop
 INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:17:20] "[36mGET /static/css/all.min.css HTTP/1.1[0m" 304 -
 INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:17:20] "[36mGET /static/dataTables/dataTables.js HTTP/1.1[0m" 304 -
 INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:17:20] "[36mGET /static/webfonts/fa-solid-900.woff2 HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:19:52] "GET /ocr HTTP/1.1" 200 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:19:52] "[36mGET /static/css/bootstrap.min.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:19:52] "[36mGET /static/dataTables/dataTables.bootstrap5.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:19:52] "[36mGET /static/js/jquery-3.7.1.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:19:52] "[36mGET /static/js/bootstrap.min.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:19:52] "[36mGET /static/dataTables/dataTables.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:19:52] "[36mGET /static/js/popper.min.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:19:52] "[36mGET /static/dataTables/dataTables.bootstrap5.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:19:52] "[36mGET /static/img/ocr.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:19:52] "GET /ocr HTTP/1.1" 200 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:19:52] "GET /ocr/get_data_all_ocr HTTP/1.1" 200 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:19:52] "GET /ocr/get_data_all_ocr HTTP/1.1" 200 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:19:54] "GET /ocr/list_ekspedisi HTTP/1.1" 200 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:19:54] "[36mGET /static/css/all.min.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:19:54] "[36mGET /static/css/bootstrap.min.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:19:54] "[36mGET /static/dataTables/dataTables.bootstrap5.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:19:54] "[36mGET /static/img/ocr.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:19:54] "[36mGET /static/dataTables/dataTables.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:19:54] "[36mGET /static/js/popper.min.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:19:54] "[36mGET /static/js/jquery-3.7.1.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:19:54] "[36mGET /static/js/bootstrap.min.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:19:54] "[36mGET /static/dataTables/dataTables.bootstrap5.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:19:55] "GET /ocr/list_ga HTTP/1.1" 200 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:19:55] "[36mGET /static/css/bootstrap.min.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:19:55] "[36mGET /static/dataTables/dataTables.bootstrap5.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:19:55] "[36mGET /static/css/all.min.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:19:55] "[36mGET /static/js/popper.min.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:19:55] "[36mGET /static/js/bootstrap.min.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:19:55] "[36mGET /static/dataTables/dataTables.bootstrap5.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:19:55] "[36mGET /static/img/ocr.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:19:55] "[36mGET /static/js/jquery-3.7.1.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:19:55] "[36mGET /static/dataTables/dataTables.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:19:55] "GET /ocr/data_ocr HTTP/1.1" 200 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:19:55] "[36mGET /static/dataTables/dataTables.bootstrap5.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:19:55] "[36mGET /static/css/bootstrap.min.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:19:55] "[36mGET /static/css/all.min.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:19:55] "[36mGET /static/img/ocr.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:19:56] "[36mGET /static/js/jquery-3.7.1.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:19:56] "[36mGET /static/js/bootstrap.min.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:19:56] "[36mGET /static/dataTables/dataTables.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:19:56] "[36mGET /static/dataTables/dataTables.bootstrap5.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:19:56] "[36mGET /static/js/popper.min.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:26:22] "GET /ocr HTTP/1.1" 200 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:26:22] "[36mGET /static/css/bootstrap.min.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:26:22] "[36mGET /static/dataTables/dataTables.bootstrap5.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:26:22] "[36mGET /static/js/bootstrap.min.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:26:22] "[36mGET /static/js/jquery-3.7.1.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:26:22] "[36mGET /static/dataTables/dataTables.bootstrap5.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:26:22] "[36mGET /static/dataTables/dataTables.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:26:22] "[36mGET /static/img/ocr.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:26:22] "[36mGET /static/js/popper.min.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:26:22] "GET /ocr HTTP/1.1" 200 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:26:22] "GET /ocr/get_data_all_ocr HTTP/1.1" 200 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:26:22] "GET /ocr/get_data_all_ocr HTTP/1.1" 200 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:26:27] "GET /ocr HTTP/1.1" 200 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:26:28] "[36mGET /static/css/bootstrap.min.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:26:28] "[36mGET /static/dataTables/dataTables.bootstrap5.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:26:28] "[36mGET /static/js/bootstrap.min.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:26:28] "[36mGET /static/js/jquery-3.7.1.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:26:28] "[36mGET /static/img/ocr.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:26:28] "[36mGET /static/dataTables/dataTables.bootstrap5.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:26:28] "[36mGET /static/dataTables/dataTables.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:26:28] "[36mGET /static/js/popper.min.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:26:28] "GET /ocr HTTP/1.1" 200 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:26:28] "GET /ocr/get_data_all_ocr HTTP/1.1" 200 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:26:28] "GET /ocr/get_data_all_ocr HTTP/1.1" 200 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:30:13] "[32mGET /ocr HTTP/1.1[0m" 302 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:30:14] "GET /ocr/login_ocr HTTP/1.1" 200 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:30:19] "[32mGET /ocr HTTP/1.1[0m" 302 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:30:20] "GET /ocr/login_ocr HTTP/1.1" 200 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:30:21] "[32mGET /ocr HTTP/1.1[0m" 302 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:30:22] "GET /ocr/login_ocr HTTP/1.1" 200 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:31:09] "[32mGET /ocr HTTP/1.1[0m" 302 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:31:09] "GET /ocr/login_ocr HTTP/1.1" 200 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:31:09] "GET /static/dataTables/dataTables.bootstrap5.css HTTP/1.1" 200 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:31:09] "GET /static/css/bootstrap.min.css HTTP/1.1" 200 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:31:10] "GET /static/js/bootstrap.min.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:31:10] "GET /static/js/jquery-3.7.1.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:31:10] "GET /static/js/popper.min.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:31:10] "GET /static/dataTables/dataTables.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:31:10] "GET /static/dataTables/dataTables.bootstrap5.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:31:12] "GET /static/img/ocr.png HTTP/1.1" 200 -
+INFO:werkzeug:192.168.15.219 - - [23/Jan/2025 21:31:13] "[36mGET /static/img/ocr.png HTTP/1.1[0m" 304 -
+ERROR:werkzeug:192.168.15.250 - - [24/Jan/2025 07:11:09] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie:')
+INFO:werkzeug:192.168.15.250 - - [24/Jan/2025 07:11:09] "[31m[1m\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr[0m" 400 -
+INFO:werkzeug:192.168.15.219 - - [24/Jan/2025 08:24:38] "GET /ocr HTTP/1.1" 200 -
+INFO:werkzeug:192.168.15.219 - - [24/Jan/2025 08:24:38] "GET /static/css/bootstrap.min.css HTTP/1.1" 200 -
+INFO:werkzeug:192.168.15.219 - - [24/Jan/2025 08:24:38] "GET /static/dataTables/dataTables.bootstrap5.css HTTP/1.1" 200 -
+INFO:werkzeug:192.168.15.219 - - [24/Jan/2025 08:24:38] "GET /static/js/bootstrap.min.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.15.219 - - [24/Jan/2025 08:24:38] "GET /static/js/jquery-3.7.1.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.15.219 - - [24/Jan/2025 08:24:38] "GET /static/js/popper.min.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.15.219 - - [24/Jan/2025 08:24:38] "GET /static/dataTables/dataTables.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.15.219 - - [24/Jan/2025 08:24:38] "GET /static/dataTables/dataTables.bootstrap5.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.15.219 - - [24/Jan/2025 08:24:38] "GET /static/img/ocr.png HTTP/1.1" 200 -
+INFO:werkzeug:192.168.15.219 - - [24/Jan/2025 08:24:41] "GET /ocr HTTP/1.1" 200 -
+INFO:werkzeug:192.168.15.219 - - [24/Jan/2025 08:24:41] "GET /ocr/get_data_all_ocr HTTP/1.1" 200 -
+INFO:werkzeug:192.168.15.219 - - [24/Jan/2025 08:24:41] "[36mGET /static/img/ocr.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [24/Jan/2025 08:24:41] "GET /ocr/get_data_all_ocr HTTP/1.1" 200 -
+INFO:werkzeug:192.168.15.219 - - [24/Jan/2025 08:25:35] "POST /ocr HTTP/1.1" 200 -
+INFO:werkzeug:192.168.15.219 - - [24/Jan/2025 08:25:36] "[36mGET /static/css/bootstrap.min.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [24/Jan/2025 08:25:36] "[36mGET /static/dataTables/dataTables.bootstrap5.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [24/Jan/2025 08:25:36] "[36mGET /static/js/jquery-3.7.1.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [24/Jan/2025 08:25:36] "[36mGET /static/dataTables/dataTables.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [24/Jan/2025 08:25:36] "[36mGET /static/js/bootstrap.min.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [24/Jan/2025 08:25:36] "[36mGET /static/img/ocr.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [24/Jan/2025 08:25:36] "[36mGET /static/js/popper.min.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [24/Jan/2025 08:25:36] "[36mGET /static/dataTables/dataTables.bootstrap5.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [24/Jan/2025 08:25:36] "GET /ocr HTTP/1.1" 200 -
+INFO:werkzeug:192.168.15.219 - - [24/Jan/2025 08:25:36] "GET /ocr/get_data_all_ocr HTTP/1.1" 200 -
+INFO:werkzeug:192.168.15.219 - - [24/Jan/2025 08:25:36] "[36mGET /static/img/ocr.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [24/Jan/2025 08:25:36] "GET /ocr/get_data_all_ocr HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/sastr/license_plate_ocr/app.py', reloading
+*************** EP Error ***************
+EP Error /onnxruntime_src/onnxruntime/python/onnxruntime_pybind_state.cc:507 void onnxruntime::python::RegisterTensorRTPluginsAsCustomOps(PySessionOptions&, const onnxruntime::ProviderOptions&) Please install TensorRT libraries as mentioned in the GPU requirements page, make sure they're in the PATH or LD_LIBRARY_PATH, and that your GPU is supported.
+ when using ['TensorrtExecutionProvider', 'CUDAExecutionProvider', 'CPUExecutionProvider']
+Falling back to ['CUDAExecutionProvider', 'CPUExecutionProvider'] and retrying.
+****************************************
+*************** EP Error ***************
+EP Error /onnxruntime_src/onnxruntime/python/onnxruntime_pybind_state.cc:507 void onnxruntime::python::RegisterTensorRTPluginsAsCustomOps(PySessionOptions&, const onnxruntime::ProviderOptions&) Please install TensorRT libraries as mentioned in the GPU requirements page, make sure they're in the PATH or LD_LIBRARY_PATH, and that your GPU is supported.
+ when using ['TensorrtExecutionProvider', 'CUDAExecutionProvider', 'CPUExecutionProvider']
+Falling back to ['CUDAExecutionProvider', 'CPUExecutionProvider'] and retrying.
+****************************************
+Action: Masuk, Img: <class 'werkzeug.datastructures.file_storage.FileStorage'>, Entry Type: Ekspedisi, KM: None
+[ALPRResult(detection=DetectionResult(label='License Plate', confidence=0.7874093055725098, bounding_box=BoundingBox(x1=432, y1=1180, x2=1546, y2=1590)), ocr=OcrResult(text='Z9273MG', confidence=0.9661693572998047))]
+[0.97, 432, 1180, 1546, 1590, 'Z9273MG']
+INFO:werkzeug: * Restarting with stat
+[1;31m2025-01-24 09:28:13.362395264 [E:onnxruntime:Default, provider_bridge_ort.cc:1848 TryGetProviderInfo_TensorRT] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1539 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_tensorrt.so with error: libcublas.so.12: cannot open shared object file: No such file or directory
+[m
+[1;31m2025-01-24 09:28:13.384690214 [E:onnxruntime:Default, provider_bridge_ort.cc:1862 TryGetProviderInfo_CUDA] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1539 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_cuda.so with error: libcublasLt.so.12: cannot open shared object file: No such file or directory
+[m
+[0;93m2025-01-24 09:28:13.384721865 [W:onnxruntime:Default, onnxruntime_pybind_state.cc:993 CreateExecutionProviderInstance] Failed to create CUDAExecutionProvider. Require cuDNN 9.* and CUDA 12.*. Please install all dependencies as mentioned in the GPU requirements page (https://onnxruntime.ai/docs/execution-providers/CUDA-ExecutionProvider.html#requirements), make sure they're in the PATH, and that your GPU is supported.[m
+INFO:open_image_models.detection.core.yolo_v9.inference:Using ONNX Runtime with ['TensorrtExecutionProvider', 'CUDAExecutionProvider', 'CPUExecutionProvider'] provider(s)
+INFO:open_image_models.detection.pipeline.license_plate:Initialized LicensePlateDetector with model /home/sastr/.cache/open-image-models/yolo-v9-t-384-license-plate-end2end/yolo-v9-t-384-license-plates-end2end.onnx
+[1;31m2025-01-24 09:28:13.451895135 [E:onnxruntime:Default, provider_bridge_ort.cc:1848 TryGetProviderInfo_TensorRT] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1539 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_tensorrt.so with error: libcublas.so.12: cannot open shared object file: No such file or directory
+[m
+[1;31m2025-01-24 09:28:13.467597893 [E:onnxruntime:Default, provider_bridge_ort.cc:1862 TryGetProviderInfo_CUDA] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1539 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_cuda.so with error: libcublasLt.so.12: cannot open shared object file: No such file or directory
+[m
+[0;93m2025-01-24 09:28:13.467625975 [W:onnxruntime:Default, onnxruntime_pybind_state.cc:993 CreateExecutionProviderInstance] Failed to create CUDAExecutionProvider. Require cuDNN 9.* and CUDA 12.*. Please install all dependencies as mentioned in the GPU requirements page (https://onnxruntime.ai/docs/execution-providers/CUDA-ExecutionProvider.html#requirements), make sure they're in the PATH, and that your GPU is supported.[m
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 147-932-764
+INFO:werkzeug:192.168.15.219 - - [24/Jan/2025 09:28:54] "[32mGET /ocr HTTP/1.1[0m" 302 -
+INFO:werkzeug:192.168.15.219 - - [24/Jan/2025 09:28:54] "GET /ocr/login_ocr HTTP/1.1" 200 -
+INFO:werkzeug:192.168.15.219 - - [24/Jan/2025 09:28:55] "GET /static/css/bootstrap.min.css HTTP/1.1" 200 -
+INFO:werkzeug:192.168.15.219 - - [24/Jan/2025 09:28:55] "GET /static/js/jquery-3.7.1.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.15.219 - - [24/Jan/2025 09:28:55] "GET /static/dataTables/dataTables.bootstrap5.css HTTP/1.1" 200 -
+INFO:werkzeug:192.168.15.219 - - [24/Jan/2025 09:28:55] "GET /static/js/popper.min.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.15.219 - - [24/Jan/2025 09:28:55] "GET /static/js/bootstrap.min.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.15.219 - - [24/Jan/2025 09:28:55] "GET /static/dataTables/dataTables.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.15.219 - - [24/Jan/2025 09:28:55] "GET /static/dataTables/dataTables.bootstrap5.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.15.219 - - [24/Jan/2025 09:28:55] "GET /static/img/ocr.png HTTP/1.1" 200 -
+INFO:werkzeug:192.168.15.219 - - [24/Jan/2025 09:28:55] "[36mGET /static/img/ocr.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [24/Jan/2025 09:28:59] "[32mPOST /ocr/login_ocr HTTP/1.1[0m" 302 -
+INFO:werkzeug:192.168.15.219 - - [24/Jan/2025 09:28:59] "[35m[1mGET /ocr/edit_tamu HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/home/sastr/license_plate_ocr/venv/lib/python3.12/site-packages/flask/app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sastr/license_plate_ocr/venv/lib/python3.12/site-packages/flask/app.py", line 1514, in wsgi_app
+    response = self.handle_exception(e)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sastr/license_plate_ocr/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sastr/license_plate_ocr/venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sastr/license_plate_ocr/venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sastr/license_plate_ocr/venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sastr/license_plate_ocr/app.py", line 226, in edit_tamu
+    list_tamu = list_tamu()
+                ^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'list_tamu' where it is not associated with a value
+INFO:werkzeug:192.168.15.219 - - [24/Jan/2025 09:28:59] "GET /ocr/edit_tamu?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.15.219 - - [24/Jan/2025 09:28:59] "GET /ocr/edit_tamu?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:192.168.15.219 - - [24/Jan/2025 09:29:00] "GET /ocr/edit_tamu?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/sastr/license_plate_ocr/app.py', reloading
+*************** EP Error ***************
+EP Error /onnxruntime_src/onnxruntime/python/onnxruntime_pybind_state.cc:507 void onnxruntime::python::RegisterTensorRTPluginsAsCustomOps(PySessionOptions&, const onnxruntime::ProviderOptions&) Please install TensorRT libraries as mentioned in the GPU requirements page, make sure they're in the PATH or LD_LIBRARY_PATH, and that your GPU is supported.
+ when using ['TensorrtExecutionProvider', 'CUDAExecutionProvider', 'CPUExecutionProvider']
+Falling back to ['CUDAExecutionProvider', 'CPUExecutionProvider'] and retrying.
+****************************************
+*************** EP Error ***************
+EP Error /onnxruntime_src/onnxruntime/python/onnxruntime_pybind_state.cc:507 void onnxruntime::python::RegisterTensorRTPluginsAsCustomOps(PySessionOptions&, const onnxruntime::ProviderOptions&) Please install TensorRT libraries as mentioned in the GPU requirements page, make sure they're in the PATH or LD_LIBRARY_PATH, and that your GPU is supported.
+ when using ['TensorrtExecutionProvider', 'CUDAExecutionProvider', 'CPUExecutionProvider']
+Falling back to ['CUDAExecutionProvider', 'CPUExecutionProvider'] and retrying.
+****************************************
+INFO:werkzeug: * Restarting with stat
+[1;31m2025-01-24 09:29:53.226032089 [E:onnxruntime:Default, provider_bridge_ort.cc:1848 TryGetProviderInfo_TensorRT] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1539 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_tensorrt.so with error: libcublas.so.12: cannot open shared object file: No such file or directory
+[m
+[1;31m2025-01-24 09:29:53.276203531 [E:onnxruntime:Default, provider_bridge_ort.cc:1862 TryGetProviderInfo_CUDA] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1539 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_cuda.so with error: libcublasLt.so.12: cannot open shared object file: No such file or directory
+[m
+[0;93m2025-01-24 09:29:53.276269330 [W:onnxruntime:Default, onnxruntime_pybind_state.cc:993 CreateExecutionProviderInstance] Failed to create CUDAExecutionProvider. Require cuDNN 9.* and CUDA 12.*. Please install all dependencies as mentioned in the GPU requirements page (https://onnxruntime.ai/docs/execution-providers/CUDA-ExecutionProvider.html#requirements), make sure they're in the PATH, and that your GPU is supported.[m
+INFO:open_image_models.detection.core.yolo_v9.inference:Using ONNX Runtime with ['TensorrtExecutionProvider', 'CUDAExecutionProvider', 'CPUExecutionProvider'] provider(s)
+INFO:open_image_models.detection.pipeline.license_plate:Initialized LicensePlateDetector with model /home/sastr/.cache/open-image-models/yolo-v9-t-384-license-plate-end2end/yolo-v9-t-384-license-plates-end2end.onnx
+[1;31m2025-01-24 09:29:53.440270706 [E:onnxruntime:Default, provider_bridge_ort.cc:1848 TryGetProviderInfo_TensorRT] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1539 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_tensorrt.so with error: libcublas.so.12: cannot open shared object file: No such file or directory
+[m
+[1;31m2025-01-24 09:29:53.481011554 [E:onnxruntime:Default, provider_bridge_ort.cc:1862 TryGetProviderInfo_CUDA] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1539 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_cuda.so with error: libcublasLt.so.12: cannot open shared object file: No such file or directory
+[m
+[0;93m2025-01-24 09:29:53.481098580 [W:onnxruntime:Default, onnxruntime_pybind_state.cc:993 CreateExecutionProviderInstance] Failed to create CUDAExecutionProvider. Require cuDNN 9.* and CUDA 12.*. Please install all dependencies as mentioned in the GPU requirements page (https://onnxruntime.ai/docs/execution-providers/CUDA-ExecutionProvider.html#requirements), make sure they're in the PATH, and that your GPU is supported.[m
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 147-932-764
+INFO:werkzeug:192.168.15.219 - - [24/Jan/2025 09:29:55] "GET /ocr/edit_tamu HTTP/1.1" 200 -
+INFO:werkzeug:192.168.15.219 - - [24/Jan/2025 09:29:55] "[36mGET /static/css/bootstrap.min.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [24/Jan/2025 09:29:55] "[36mGET /static/dataTables/dataTables.bootstrap5.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [24/Jan/2025 09:29:55] "GET /static/css/all.min.css HTTP/1.1" 200 -
+INFO:werkzeug:192.168.15.219 - - [24/Jan/2025 09:29:55] "[36mGET /static/img/ocr.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [24/Jan/2025 09:29:55] "[36mGET /static/js/bootstrap.min.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [24/Jan/2025 09:29:55] "[36mGET /static/js/jquery-3.7.1.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [24/Jan/2025 09:29:55] "[36mGET /static/js/popper.min.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [24/Jan/2025 09:29:55] "[36mGET /static/dataTables/dataTables.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [24/Jan/2025 09:29:55] "[36mGET /static/dataTables/dataTables.bootstrap5.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.15.219 - - [24/Jan/2025 09:29:55] "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 200 -
+INFO:werkzeug:192.168.15.219 - - [24/Jan/2025 09:29:55] "[36mGET /static/img/ocr.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/home/sastr/license_plate_ocr/app.py', reloading
+*************** EP Error ***************
+EP Error /onnxruntime_src/onnxruntime/python/onnxruntime_pybind_state.cc:507 void onnxruntime::python::RegisterTensorRTPluginsAsCustomOps(PySessionOptions&, const onnxruntime::ProviderOptions&) Please install TensorRT libraries as mentioned in the GPU requirements page, make sure they're in the PATH or LD_LIBRARY_PATH, and that your GPU is supported.
+ when using ['TensorrtExecutionProvider', 'CUDAExecutionProvider', 'CPUExecutionProvider']
+Falling back to ['CUDAExecutionProvider', 'CPUExecutionProvider'] and retrying.
+****************************************
+*************** EP Error ***************
+EP Error /onnxruntime_src/onnxruntime/python/onnxruntime_pybind_state.cc:507 void onnxruntime::python::RegisterTensorRTPluginsAsCustomOps(PySessionOptions&, const onnxruntime::ProviderOptions&) Please install TensorRT libraries as mentioned in the GPU requirements page, make sure they're in the PATH or LD_LIBRARY_PATH, and that your GPU is supported.
+ when using ['TensorrtExecutionProvider', 'CUDAExecutionProvider', 'CPUExecutionProvider']
+Falling back to ['CUDAExecutionProvider', 'CPUExecutionProvider'] and retrying.
+****************************************
+INFO:werkzeug: * Restarting with stat
+[1;31m2025-01-24 10:43:08.833309162 [E:onnxruntime:Default, provider_bridge_ort.cc:1848 TryGetProviderInfo_TensorRT] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1539 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_tensorrt.so with error: libcublas.so.12: cannot open shared object file: No such file or directory
+[m
+[1;31m2025-01-24 10:43:08.878934522 [E:onnxruntime:Default, provider_bridge_ort.cc:1862 TryGetProviderInfo_CUDA] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1539 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_cuda.so with error: libcublasLt.so.12: cannot open shared object file: No such file or directory
+[m
+[0;93m2025-01-24 10:43:08.879104531 [W:onnxruntime:Default, onnxruntime_pybind_state.cc:993 CreateExecutionProviderInstance] Failed to create CUDAExecutionProvider. Require cuDNN 9.* and CUDA 12.*. Please install all dependencies as mentioned in the GPU requirements page (https://onnxruntime.ai/docs/execution-providers/CUDA-ExecutionProvider.html#requirements), make sure they're in the PATH, and that your GPU is supported.[m
+INFO:open_image_models.detection.core.yolo_v9.inference:Using ONNX Runtime with ['TensorrtExecutionProvider', 'CUDAExecutionProvider', 'CPUExecutionProvider'] provider(s)
+INFO:open_image_models.detection.pipeline.license_plate:Initialized LicensePlateDetector with model /home/sastr/.cache/open-image-models/yolo-v9-t-384-license-plate-end2end/yolo-v9-t-384-license-plates-end2end.onnx
+[1;31m2025-01-24 10:43:09.011432450 [E:onnxruntime:Default, provider_bridge_ort.cc:1848 TryGetProviderInfo_TensorRT] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1539 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_tensorrt.so with error: libcublas.so.12: cannot open shared object file: No such file or directory
+[m
+[1;31m2025-01-24 10:43:09.046358857 [E:onnxruntime:Default, provider_bridge_ort.cc:1862 TryGetProviderInfo_CUDA] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1539 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_cuda.so with error: libcublasLt.so.12: cannot open shared object file: No such file or directory
+[m
+[0;93m2025-01-24 10:43:09.046413751 [W:onnxruntime:Default, onnxruntime_pybind_state.cc:993 CreateExecutionProviderInstance] Failed to create CUDAExecutionProvider. Require cuDNN 9.* and CUDA 12.*. Please install all dependencies as mentioned in the GPU requirements page (https://onnxruntime.ai/docs/execution-providers/CUDA-ExecutionProvider.html#requirements), make sure they're in the PATH, and that your GPU is supported.[m
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 147-932-764
+INFO:werkzeug: * Detected change in '/home/sastr/license_plate_ocr/app.py', reloading
+*************** EP Error ***************
+EP Error /onnxruntime_src/onnxruntime/python/onnxruntime_pybind_state.cc:507 void onnxruntime::python::RegisterTensorRTPluginsAsCustomOps(PySessionOptions&, const onnxruntime::ProviderOptions&) Please install TensorRT libraries as mentioned in the GPU requirements page, make sure they're in the PATH or LD_LIBRARY_PATH, and that your GPU is supported.
+ when using ['TensorrtExecutionProvider', 'CUDAExecutionProvider', 'CPUExecutionProvider']
+Falling back to ['CUDAExecutionProvider', 'CPUExecutionProvider'] and retrying.
+****************************************
+*************** EP Error ***************
+EP Error /onnxruntime_src/onnxruntime/python/onnxruntime_pybind_state.cc:507 void onnxruntime::python::RegisterTensorRTPluginsAsCustomOps(PySessionOptions&, const onnxruntime::ProviderOptions&) Please install TensorRT libraries as mentioned in the GPU requirements page, make sure they're in the PATH or LD_LIBRARY_PATH, and that your GPU is supported.
+ when using ['TensorrtExecutionProvider', 'CUDAExecutionProvider', 'CPUExecutionProvider']
+Falling back to ['CUDAExecutionProvider', 'CPUExecutionProvider'] and retrying.
+****************************************
+INFO:werkzeug: * Restarting with stat
+[1;31m2025-01-24 11:04:01.225660071 [E:onnxruntime:Default, provider_bridge_ort.cc:1848 TryGetProviderInfo_TensorRT] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1539 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_tensorrt.so with error: libcublas.so.12: cannot open shared object file: No such file or directory
+[m
+[1;31m2025-01-24 11:04:01.243937827 [E:onnxruntime:Default, provider_bridge_ort.cc:1862 TryGetProviderInfo_CUDA] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1539 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_cuda.so with error: libcublasLt.so.12: cannot open shared object file: No such file or directory
+[m
+[0;93m2025-01-24 11:04:01.243974943 [W:onnxruntime:Default, onnxruntime_pybind_state.cc:993 CreateExecutionProviderInstance] Failed to create CUDAExecutionProvider. Require cuDNN 9.* and CUDA 12.*. Please install all dependencies as mentioned in the GPU requirements page (https://onnxruntime.ai/docs/execution-providers/CUDA-ExecutionProvider.html#requirements), make sure they're in the PATH, and that your GPU is supported.[m
+INFO:open_image_models.detection.core.yolo_v9.inference:Using ONNX Runtime with ['TensorrtExecutionProvider', 'CUDAExecutionProvider', 'CPUExecutionProvider'] provider(s)
+INFO:open_image_models.detection.pipeline.license_plate:Initialized LicensePlateDetector with model /home/sastr/.cache/open-image-models/yolo-v9-t-384-license-plate-end2end/yolo-v9-t-384-license-plates-end2end.onnx
+[1;31m2025-01-24 11:04:01.311525128 [E:onnxruntime:Default, provider_bridge_ort.cc:1848 TryGetProviderInfo_TensorRT] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1539 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_tensorrt.so with error: libcublas.so.12: cannot open shared object file: No such file or directory
+[m
+[1;31m2025-01-24 11:04:01.322855092 [E:onnxruntime:Default, provider_bridge_ort.cc:1862 TryGetProviderInfo_CUDA] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1539 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_cuda.so with error: libcublasLt.so.12: cannot open shared object file: No such file or directory
+[m
+[0;93m2025-01-24 11:04:01.322885225 [W:onnxruntime:Default, onnxruntime_pybind_state.cc:993 CreateExecutionProviderInstance] Failed to create CUDAExecutionProvider. Require cuDNN 9.* and CUDA 12.*. Please install all dependencies as mentioned in the GPU requirements page (https://onnxruntime.ai/docs/execution-providers/CUDA-ExecutionProvider.html#requirements), make sure they're in the PATH, and that your GPU is supported.[m
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 147-932-764
+INFO:werkzeug: * Detected change in '/home/sastr/license_plate_ocr/app.py', reloading
+*************** EP Error ***************
+EP Error /onnxruntime_src/onnxruntime/python/onnxruntime_pybind_state.cc:507 void onnxruntime::python::RegisterTensorRTPluginsAsCustomOps(PySessionOptions&, const onnxruntime::ProviderOptions&) Please install TensorRT libraries as mentioned in the GPU requirements page, make sure they're in the PATH or LD_LIBRARY_PATH, and that your GPU is supported.
+ when using ['TensorrtExecutionProvider', 'CUDAExecutionProvider', 'CPUExecutionProvider']
+Falling back to ['CUDAExecutionProvider', 'CPUExecutionProvider'] and retrying.
+****************************************
+*************** EP Error ***************
+EP Error /onnxruntime_src/onnxruntime/python/onnxruntime_pybind_state.cc:507 void onnxruntime::python::RegisterTensorRTPluginsAsCustomOps(PySessionOptions&, const onnxruntime::ProviderOptions&) Please install TensorRT libraries as mentioned in the GPU requirements page, make sure they're in the PATH or LD_LIBRARY_PATH, and that your GPU is supported.
+ when using ['TensorrtExecutionProvider', 'CUDAExecutionProvider', 'CPUExecutionProvider']
+Falling back to ['CUDAExecutionProvider', 'CPUExecutionProvider'] and retrying.
+****************************************
+INFO:werkzeug: * Restarting with stat
+[1;31m2025-01-24 11:22:17.126982344 [E:onnxruntime:Default, provider_bridge_ort.cc:1848 TryGetProviderInfo_TensorRT] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1539 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_tensorrt.so with error: libcublas.so.12: cannot open shared object file: No such file or directory
+[m
+[1;31m2025-01-24 11:22:17.162670567 [E:onnxruntime:Default, provider_bridge_ort.cc:1862 TryGetProviderInfo_CUDA] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1539 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_cuda.so with error: libcublasLt.so.12: cannot open shared object file: No such file or directory
+[m
+[0;93m2025-01-24 11:22:17.162836328 [W:onnxruntime:Default, onnxruntime_pybind_state.cc:993 CreateExecutionProviderInstance] Failed to create CUDAExecutionProvider. Require cuDNN 9.* and CUDA 12.*. Please install all dependencies as mentioned in the GPU requirements page (https://onnxruntime.ai/docs/execution-providers/CUDA-ExecutionProvider.html#requirements), make sure they're in the PATH, and that your GPU is supported.[m
+INFO:open_image_models.detection.core.yolo_v9.inference:Using ONNX Runtime with ['TensorrtExecutionProvider', 'CUDAExecutionProvider', 'CPUExecutionProvider'] provider(s)
+INFO:open_image_models.detection.pipeline.license_plate:Initialized LicensePlateDetector with model /home/sastr/.cache/open-image-models/yolo-v9-t-384-license-plate-end2end/yolo-v9-t-384-license-plates-end2end.onnx
+[1;31m2025-01-24 11:22:17.311036434 [E:onnxruntime:Default, provider_bridge_ort.cc:1848 TryGetProviderInfo_TensorRT] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1539 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_tensorrt.so with error: libcublas.so.12: cannot open shared object file: No such file or directory
+[m
+[1;31m2025-01-24 11:22:17.331699490 [E:onnxruntime:Default, provider_bridge_ort.cc:1862 TryGetProviderInfo_CUDA] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1539 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_cuda.so with error: libcublasLt.so.12: cannot open shared object file: No such file or directory
+[m
+[0;93m2025-01-24 11:22:17.331742841 [W:onnxruntime:Default, onnxruntime_pybind_state.cc:993 CreateExecutionProviderInstance] Failed to create CUDAExecutionProvider. Require cuDNN 9.* and CUDA 12.*. Please install all dependencies as mentioned in the GPU requirements page (https://onnxruntime.ai/docs/execution-providers/CUDA-ExecutionProvider.html#requirements), make sure they're in the PATH, and that your GPU is supported.[m
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 147-932-764
+INFO:werkzeug: * Detected change in '/home/sastr/license_plate_ocr/app.py', reloading
+*************** EP Error ***************
+EP Error /onnxruntime_src/onnxruntime/python/onnxruntime_pybind_state.cc:507 void onnxruntime::python::RegisterTensorRTPluginsAsCustomOps(PySessionOptions&, const onnxruntime::ProviderOptions&) Please install TensorRT libraries as mentioned in the GPU requirements page, make sure they're in the PATH or LD_LIBRARY_PATH, and that your GPU is supported.
+ when using ['TensorrtExecutionProvider', 'CUDAExecutionProvider', 'CPUExecutionProvider']
+Falling back to ['CUDAExecutionProvider', 'CPUExecutionProvider'] and retrying.
+****************************************
+*************** EP Error ***************
+EP Error /onnxruntime_src/onnxruntime/python/onnxruntime_pybind_state.cc:507 void onnxruntime::python::RegisterTensorRTPluginsAsCustomOps(PySessionOptions&, const onnxruntime::ProviderOptions&) Please install TensorRT libraries as mentioned in the GPU requirements page, make sure they're in the PATH or LD_LIBRARY_PATH, and that your GPU is supported.
+ when using ['TensorrtExecutionProvider', 'CUDAExecutionProvider', 'CPUExecutionProvider']
+Falling back to ['CUDAExecutionProvider', 'CPUExecutionProvider'] and retrying.
+****************************************
+INFO:werkzeug: * Restarting with stat
+[1;31m2025-01-24 11:23:40.949735797 [E:onnxruntime:Default, provider_bridge_ort.cc:1848 TryGetProviderInfo_TensorRT] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1539 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_tensorrt.so with error: libcublas.so.12: cannot open shared object file: No such file or directory
+[m
+[1;31m2025-01-24 11:23:40.985529203 [E:onnxruntime:Default, provider_bridge_ort.cc:1862 TryGetProviderInfo_CUDA] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1539 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_cuda.so with error: libcublasLt.so.12: cannot open shared object file: No such file or directory
+[m
+[0;93m2025-01-24 11:23:40.985591239 [W:onnxruntime:Default, onnxruntime_pybind_state.cc:993 CreateExecutionProviderInstance] Failed to create CUDAExecutionProvider. Require cuDNN 9.* and CUDA 12.*. Please install all dependencies as mentioned in the GPU requirements page (https://onnxruntime.ai/docs/execution-providers/CUDA-ExecutionProvider.html#requirements), make sure they're in the PATH, and that your GPU is supported.[m
+INFO:open_image_models.detection.core.yolo_v9.inference:Using ONNX Runtime with ['TensorrtExecutionProvider', 'CUDAExecutionProvider', 'CPUExecutionProvider'] provider(s)
+INFO:open_image_models.detection.pipeline.license_plate:Initialized LicensePlateDetector with model /home/sastr/.cache/open-image-models/yolo-v9-t-384-license-plate-end2end/yolo-v9-t-384-license-plates-end2end.onnx
+[1;31m2025-01-24 11:23:41.133532926 [E:onnxruntime:Default, provider_bridge_ort.cc:1848 TryGetProviderInfo_TensorRT] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1539 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_tensorrt.so with error: libcublas.so.12: cannot open shared object file: No such file or directory
+[m
+[1;31m2025-01-24 11:23:41.158459100 [E:onnxruntime:Default, provider_bridge_ort.cc:1862 TryGetProviderInfo_CUDA] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1539 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_cuda.so with error: libcublasLt.so.12: cannot open shared object file: No such file or directory
+[m
+[0;93m2025-01-24 11:23:41.158627026 [W:onnxruntime:Default, onnxruntime_pybind_state.cc:993 CreateExecutionProviderInstance] Failed to create CUDAExecutionProvider. Require cuDNN 9.* and CUDA 12.*. Please install all dependencies as mentioned in the GPU requirements page (https://onnxruntime.ai/docs/execution-providers/CUDA-ExecutionProvider.html#requirements), make sure they're in the PATH, and that your GPU is supported.[m
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 147-932-764
+INFO:werkzeug: * Detected change in '/home/sastr/license_plate_ocr/app.py', reloading
+*************** EP Error ***************
+EP Error /onnxruntime_src/onnxruntime/python/onnxruntime_pybind_state.cc:507 void onnxruntime::python::RegisterTensorRTPluginsAsCustomOps(PySessionOptions&, const onnxruntime::ProviderOptions&) Please install TensorRT libraries as mentioned in the GPU requirements page, make sure they're in the PATH or LD_LIBRARY_PATH, and that your GPU is supported.
+ when using ['TensorrtExecutionProvider', 'CUDAExecutionProvider', 'CPUExecutionProvider']
+Falling back to ['CUDAExecutionProvider', 'CPUExecutionProvider'] and retrying.
+****************************************
+*************** EP Error ***************
+EP Error /onnxruntime_src/onnxruntime/python/onnxruntime_pybind_state.cc:507 void onnxruntime::python::RegisterTensorRTPluginsAsCustomOps(PySessionOptions&, const onnxruntime::ProviderOptions&) Please install TensorRT libraries as mentioned in the GPU requirements page, make sure they're in the PATH or LD_LIBRARY_PATH, and that your GPU is supported.
+ when using ['TensorrtExecutionProvider', 'CUDAExecutionProvider', 'CPUExecutionProvider']
+Falling back to ['CUDAExecutionProvider', 'CPUExecutionProvider'] and retrying.
+****************************************
+INFO:werkzeug: * Restarting with stat
+[1;31m2025-01-24 13:06:24.481807858 [E:onnxruntime:Default, provider_bridge_ort.cc:1848 TryGetProviderInfo_TensorRT] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1539 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_tensorrt.so with error: libcublas.so.12: cannot open shared object file: No such file or directory
+[m
+[1;31m2025-01-24 13:06:24.516151307 [E:onnxruntime:Default, provider_bridge_ort.cc:1862 TryGetProviderInfo_CUDA] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1539 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_cuda.so with error: libcublasLt.so.12: cannot open shared object file: No such file or directory
+[m
+[0;93m2025-01-24 13:06:24.516198318 [W:onnxruntime:Default, onnxruntime_pybind_state.cc:993 CreateExecutionProviderInstance] Failed to create CUDAExecutionProvider. Require cuDNN 9.* and CUDA 12.*. Please install all dependencies as mentioned in the GPU requirements page (https://onnxruntime.ai/docs/execution-providers/CUDA-ExecutionProvider.html#requirements), make sure they're in the PATH, and that your GPU is supported.[m
+INFO:open_image_models.detection.core.yolo_v9.inference:Using ONNX Runtime with ['TensorrtExecutionProvider', 'CUDAExecutionProvider', 'CPUExecutionProvider'] provider(s)
+INFO:open_image_models.detection.pipeline.license_plate:Initialized LicensePlateDetector with model /home/sastr/.cache/open-image-models/yolo-v9-t-384-license-plate-end2end/yolo-v9-t-384-license-plates-end2end.onnx
+[1;31m2025-01-24 13:06:24.666843463 [E:onnxruntime:Default, provider_bridge_ort.cc:1848 TryGetProviderInfo_TensorRT] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1539 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_tensorrt.so with error: libcublas.so.12: cannot open shared object file: No such file or directory
+[m
+[1;31m2025-01-24 13:06:24.690711803 [E:onnxruntime:Default, provider_bridge_ort.cc:1862 TryGetProviderInfo_CUDA] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1539 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_cuda.so with error: libcublasLt.so.12: cannot open shared object file: No such file or directory
+[m
+[0;93m2025-01-24 13:06:24.690876448 [W:onnxruntime:Default, onnxruntime_pybind_state.cc:993 CreateExecutionProviderInstance] Failed to create CUDAExecutionProvider. Require cuDNN 9.* and CUDA 12.*. Please install all dependencies as mentioned in the GPU requirements page (https://onnxruntime.ai/docs/execution-providers/CUDA-ExecutionProvider.html#requirements), make sure they're in the PATH, and that your GPU is supported.[m
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 147-932-764
+INFO:werkzeug: * Detected change in '/home/sastr/license_plate_ocr/app.py', reloading
+*************** EP Error ***************
+EP Error /onnxruntime_src/onnxruntime/python/onnxruntime_pybind_state.cc:507 void onnxruntime::python::RegisterTensorRTPluginsAsCustomOps(PySessionOptions&, const onnxruntime::ProviderOptions&) Please install TensorRT libraries as mentioned in the GPU requirements page, make sure they're in the PATH or LD_LIBRARY_PATH, and that your GPU is supported.
+ when using ['TensorrtExecutionProvider', 'CUDAExecutionProvider', 'CPUExecutionProvider']
+Falling back to ['CUDAExecutionProvider', 'CPUExecutionProvider'] and retrying.
+****************************************
+*************** EP Error ***************
+EP Error /onnxruntime_src/onnxruntime/python/onnxruntime_pybind_state.cc:507 void onnxruntime::python::RegisterTensorRTPluginsAsCustomOps(PySessionOptions&, const onnxruntime::ProviderOptions&) Please install TensorRT libraries as mentioned in the GPU requirements page, make sure they're in the PATH or LD_LIBRARY_PATH, and that your GPU is supported.
+ when using ['TensorrtExecutionProvider', 'CUDAExecutionProvider', 'CPUExecutionProvider']
+Falling back to ['CUDAExecutionProvider', 'CPUExecutionProvider'] and retrying.
+****************************************
+INFO:werkzeug: * Restarting with stat
+[1;31m2025-01-24 13:07:43.197562077 [E:onnxruntime:Default, provider_bridge_ort.cc:1848 TryGetProviderInfo_TensorRT] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1539 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_tensorrt.so with error: libcublas.so.12: cannot open shared object file: No such file or directory
+[m
+[1;31m2025-01-24 13:07:43.232382894 [E:onnxruntime:Default, provider_bridge_ort.cc:1862 TryGetProviderInfo_CUDA] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1539 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_cuda.so with error: libcublasLt.so.12: cannot open shared object file: No such file or directory
+[m
+[0;93m2025-01-24 13:07:43.232444615 [W:onnxruntime:Default, onnxruntime_pybind_state.cc:993 CreateExecutionProviderInstance] Failed to create CUDAExecutionProvider. Require cuDNN 9.* and CUDA 12.*. Please install all dependencies as mentioned in the GPU requirements page (https://onnxruntime.ai/docs/execution-providers/CUDA-ExecutionProvider.html#requirements), make sure they're in the PATH, and that your GPU is supported.[m
+INFO:open_image_models.detection.core.yolo_v9.inference:Using ONNX Runtime with ['TensorrtExecutionProvider', 'CUDAExecutionProvider', 'CPUExecutionProvider'] provider(s)
+INFO:open_image_models.detection.pipeline.license_plate:Initialized LicensePlateDetector with model /home/sastr/.cache/open-image-models/yolo-v9-t-384-license-plate-end2end/yolo-v9-t-384-license-plates-end2end.onnx
+[1;31m2025-01-24 13:07:43.398280655 [E:onnxruntime:Default, provider_bridge_ort.cc:1848 TryGetProviderInfo_TensorRT] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1539 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_tensorrt.so with error: libcublas.so.12: cannot open shared object file: No such file or directory
+[m
+[1;31m2025-01-24 13:07:43.438246696 [E:onnxruntime:Default, provider_bridge_ort.cc:1862 TryGetProviderInfo_CUDA] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1539 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_cuda.so with error: libcublasLt.so.12: cannot open shared object file: No such file or directory
+[m
+[0;93m2025-01-24 13:07:43.438723559 [W:onnxruntime:Default, onnxruntime_pybind_state.cc:993 CreateExecutionProviderInstance] Failed to create CUDAExecutionProvider. Require cuDNN 9.* and CUDA 12.*. Please install all dependencies as mentioned in the GPU requirements page (https://onnxruntime.ai/docs/execution-providers/CUDA-ExecutionProvider.html#requirements), make sure they're in the PATH, and that your GPU is supported.[m
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 147-932-764
+INFO:werkzeug: * Detected change in '/home/sastr/license_plate_ocr/script/fast_alpr_script.py', reloading
+*************** EP Error ***************
+EP Error /onnxruntime_src/onnxruntime/python/onnxruntime_pybind_state.cc:507 void onnxruntime::python::RegisterTensorRTPluginsAsCustomOps(PySessionOptions&, const onnxruntime::ProviderOptions&) Please install TensorRT libraries as mentioned in the GPU requirements page, make sure they're in the PATH or LD_LIBRARY_PATH, and that your GPU is supported.
+ when using ['TensorrtExecutionProvider', 'CUDAExecutionProvider', 'CPUExecutionProvider']
+Falling back to ['CUDAExecutionProvider', 'CPUExecutionProvider'] and retrying.
+****************************************
+*************** EP Error ***************
+EP Error /onnxruntime_src/onnxruntime/python/onnxruntime_pybind_state.cc:507 void onnxruntime::python::RegisterTensorRTPluginsAsCustomOps(PySessionOptions&, const onnxruntime::ProviderOptions&) Please install TensorRT libraries as mentioned in the GPU requirements page, make sure they're in the PATH or LD_LIBRARY_PATH, and that your GPU is supported.
+ when using ['TensorrtExecutionProvider', 'CUDAExecutionProvider', 'CPUExecutionProvider']
+Falling back to ['CUDAExecutionProvider', 'CPUExecutionProvider'] and retrying.
+****************************************
+INFO:werkzeug: * Restarting with stat
+[1;31m2025-01-24 13:08:05.349072185 [E:onnxruntime:Default, provider_bridge_ort.cc:1848 TryGetProviderInfo_TensorRT] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1539 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_tensorrt.so with error: libcublas.so.12: cannot open shared object file: No such file or directory
+[m
+[1;31m2025-01-24 13:08:05.371875581 [E:onnxruntime:Default, provider_bridge_ort.cc:1862 TryGetProviderInfo_CUDA] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1539 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_cuda.so with error: libcublasLt.so.12: cannot open shared object file: No such file or directory
+[m
+[0;93m2025-01-24 13:08:05.371905317 [W:onnxruntime:Default, onnxruntime_pybind_state.cc:993 CreateExecutionProviderInstance] Failed to create CUDAExecutionProvider. Require cuDNN 9.* and CUDA 12.*. Please install all dependencies as mentioned in the GPU requirements page (https://onnxruntime.ai/docs/execution-providers/CUDA-ExecutionProvider.html#requirements), make sure they're in the PATH, and that your GPU is supported.[m
+INFO:open_image_models.detection.core.yolo_v9.inference:Using ONNX Runtime with ['TensorrtExecutionProvider', 'CUDAExecutionProvider', 'CPUExecutionProvider'] provider(s)
+INFO:open_image_models.detection.pipeline.license_plate:Initialized LicensePlateDetector with model /home/sastr/.cache/open-image-models/yolo-v9-t-384-license-plate-end2end/yolo-v9-t-384-license-plates-end2end.onnx
+[1;31m2025-01-24 13:08:05.438852344 [E:onnxruntime:Default, provider_bridge_ort.cc:1848 TryGetProviderInfo_TensorRT] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1539 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_tensorrt.so with error: libcublas.so.12: cannot open shared object file: No such file or directory
+[m
+[1;31m2025-01-24 13:08:05.454495121 [E:onnxruntime:Default, provider_bridge_ort.cc:1862 TryGetProviderInfo_CUDA] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1539 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_cuda.so with error: libcublasLt.so.12: cannot open shared object file: No such file or directory
+[m
+[0;93m2025-01-24 13:08:05.454524224 [W:onnxruntime:Default, onnxruntime_pybind_state.cc:993 CreateExecutionProviderInstance] Failed to create CUDAExecutionProvider. Require cuDNN 9.* and CUDA 12.*. Please install all dependencies as mentioned in the GPU requirements page (https://onnxruntime.ai/docs/execution-providers/CUDA-ExecutionProvider.html#requirements), make sure they're in the PATH, and that your GPU is supported.[m
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 147-932-764
+INFO:werkzeug: * Detected change in '/home/sastr/license_plate_ocr/app.py', reloading
+*************** EP Error ***************
+EP Error /onnxruntime_src/onnxruntime/python/onnxruntime_pybind_state.cc:507 void onnxruntime::python::RegisterTensorRTPluginsAsCustomOps(PySessionOptions&, const onnxruntime::ProviderOptions&) Please install TensorRT libraries as mentioned in the GPU requirements page, make sure they're in the PATH or LD_LIBRARY_PATH, and that your GPU is supported.
+ when using ['TensorrtExecutionProvider', 'CUDAExecutionProvider', 'CPUExecutionProvider']
+Falling back to ['CUDAExecutionProvider', 'CPUExecutionProvider'] and retrying.
+****************************************
+*************** EP Error ***************
+EP Error /onnxruntime_src/onnxruntime/python/onnxruntime_pybind_state.cc:507 void onnxruntime::python::RegisterTensorRTPluginsAsCustomOps(PySessionOptions&, const onnxruntime::ProviderOptions&) Please install TensorRT libraries as mentioned in the GPU requirements page, make sure they're in the PATH or LD_LIBRARY_PATH, and that your GPU is supported.
+ when using ['TensorrtExecutionProvider', 'CUDAExecutionProvider', 'CPUExecutionProvider']
+Falling back to ['CUDAExecutionProvider', 'CPUExecutionProvider'] and retrying.
+****************************************
+INFO:werkzeug: * Restarting with stat
+[1;31m2025-01-24 13:08:16.429754555 [E:onnxruntime:Default, provider_bridge_ort.cc:1848 TryGetProviderInfo_TensorRT] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1539 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_tensorrt.so with error: libcublas.so.12: cannot open shared object file: No such file or directory
+[m
+[1;31m2025-01-24 13:08:16.465052915 [E:onnxruntime:Default, provider_bridge_ort.cc:1862 TryGetProviderInfo_CUDA] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1539 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_cuda.so with error: libcublasLt.so.12: cannot open shared object file: No such file or directory
+[m
+[0;93m2025-01-24 13:08:16.465223543 [W:onnxruntime:Default, onnxruntime_pybind_state.cc:993 CreateExecutionProviderInstance] Failed to create CUDAExecutionProvider. Require cuDNN 9.* and CUDA 12.*. Please install all dependencies as mentioned in the GPU requirements page (https://onnxruntime.ai/docs/execution-providers/CUDA-ExecutionProvider.html#requirements), make sure they're in the PATH, and that your GPU is supported.[m
+INFO:open_image_models.detection.core.yolo_v9.inference:Using ONNX Runtime with ['TensorrtExecutionProvider', 'CUDAExecutionProvider', 'CPUExecutionProvider'] provider(s)
+INFO:open_image_models.detection.pipeline.license_plate:Initialized LicensePlateDetector with model /home/sastr/.cache/open-image-models/yolo-v9-t-384-license-plate-end2end/yolo-v9-t-384-license-plates-end2end.onnx
+[1;31m2025-01-24 13:08:16.632649008 [E:onnxruntime:Default, provider_bridge_ort.cc:1848 TryGetProviderInfo_TensorRT] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1539 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_tensorrt.so with error: libcublas.so.12: cannot open shared object file: No such file or directory
+[m
+[1;31m2025-01-24 13:08:16.655031292 [E:onnxruntime:Default, provider_bridge_ort.cc:1862 TryGetProviderInfo_CUDA] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1539 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_cuda.so with error: libcublasLt.so.12: cannot open shared object file: No such file or directory
+[m
+[0;93m2025-01-24 13:08:16.655074053 [W:onnxruntime:Default, onnxruntime_pybind_state.cc:993 CreateExecutionProviderInstance] Failed to create CUDAExecutionProvider. Require cuDNN 9.* and CUDA 12.*. Please install all dependencies as mentioned in the GPU requirements page (https://onnxruntime.ai/docs/execution-providers/CUDA-ExecutionProvider.html#requirements), make sure they're in the PATH, and that your GPU is supported.[m
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 147-932-764
+INFO:werkzeug: * Detected change in '/home/sastr/license_plate_ocr/app.py', reloading
+*************** EP Error ***************
+EP Error /onnxruntime_src/onnxruntime/python/onnxruntime_pybind_state.cc:507 void onnxruntime::python::RegisterTensorRTPluginsAsCustomOps(PySessionOptions&, const onnxruntime::ProviderOptions&) Please install TensorRT libraries as mentioned in the GPU requirements page, make sure they're in the PATH or LD_LIBRARY_PATH, and that your GPU is supported.
+ when using ['TensorrtExecutionProvider', 'CUDAExecutionProvider', 'CPUExecutionProvider']
+Falling back to ['CUDAExecutionProvider', 'CPUExecutionProvider'] and retrying.
+****************************************
+*************** EP Error ***************
+EP Error /onnxruntime_src/onnxruntime/python/onnxruntime_pybind_state.cc:507 void onnxruntime::python::RegisterTensorRTPluginsAsCustomOps(PySessionOptions&, const onnxruntime::ProviderOptions&) Please install TensorRT libraries as mentioned in the GPU requirements page, make sure they're in the PATH or LD_LIBRARY_PATH, and that your GPU is supported.
+ when using ['TensorrtExecutionProvider', 'CUDAExecutionProvider', 'CPUExecutionProvider']
+Falling back to ['CUDAExecutionProvider', 'CPUExecutionProvider'] and retrying.
+****************************************
+INFO:werkzeug: * Restarting with stat
+[1;31m2025-01-24 13:08:42.821586234 [E:onnxruntime:Default, provider_bridge_ort.cc:1848 TryGetProviderInfo_TensorRT] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1539 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_tensorrt.so with error: libcublas.so.12: cannot open shared object file: No such file or directory
+[m
+[1;31m2025-01-24 13:08:42.868052137 [E:onnxruntime:Default, provider_bridge_ort.cc:1862 TryGetProviderInfo_CUDA] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1539 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_cuda.so with error: libcublasLt.so.12: cannot open shared object file: No such file or directory
+[m
+[0;93m2025-01-24 13:08:42.868226673 [W:onnxruntime:Default, onnxruntime_pybind_state.cc:993 CreateExecutionProviderInstance] Failed to create CUDAExecutionProvider. Require cuDNN 9.* and CUDA 12.*. Please install all dependencies as mentioned in the GPU requirements page (https://onnxruntime.ai/docs/execution-providers/CUDA-ExecutionProvider.html#requirements), make sure they're in the PATH, and that your GPU is supported.[m
+INFO:open_image_models.detection.core.yolo_v9.inference:Using ONNX Runtime with ['TensorrtExecutionProvider', 'CUDAExecutionProvider', 'CPUExecutionProvider'] provider(s)
+INFO:open_image_models.detection.pipeline.license_plate:Initialized LicensePlateDetector with model /home/sastr/.cache/open-image-models/yolo-v9-t-384-license-plate-end2end/yolo-v9-t-384-license-plates-end2end.onnx
+[1;31m2025-01-24 13:08:43.014128443 [E:onnxruntime:Default, provider_bridge_ort.cc:1848 TryGetProviderInfo_TensorRT] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1539 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_tensorrt.so with error: libcublas.so.12: cannot open shared object file: No such file or directory
+[m
+[1;31m2025-01-24 13:08:43.037806847 [E:onnxruntime:Default, provider_bridge_ort.cc:1862 TryGetProviderInfo_CUDA] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1539 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_cuda.so with error: libcublasLt.so.12: cannot open shared object file: No such file or directory
+[m
+[0;93m2025-01-24 13:08:43.038079223 [W:onnxruntime:Default, onnxruntime_pybind_state.cc:993 CreateExecutionProviderInstance] Failed to create CUDAExecutionProvider. Require cuDNN 9.* and CUDA 12.*. Please install all dependencies as mentioned in the GPU requirements page (https://onnxruntime.ai/docs/execution-providers/CUDA-ExecutionProvider.html#requirements), make sure they're in the PATH, and that your GPU is supported.[m
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 147-932-764
+INFO:werkzeug: * Detected change in '/home/sastr/license_plate_ocr/app.py', reloading
+*************** EP Error ***************
+EP Error /onnxruntime_src/onnxruntime/python/onnxruntime_pybind_state.cc:507 void onnxruntime::python::RegisterTensorRTPluginsAsCustomOps(PySessionOptions&, const onnxruntime::ProviderOptions&) Please install TensorRT libraries as mentioned in the GPU requirements page, make sure they're in the PATH or LD_LIBRARY_PATH, and that your GPU is supported.
+ when using ['TensorrtExecutionProvider', 'CUDAExecutionProvider', 'CPUExecutionProvider']
+Falling back to ['CUDAExecutionProvider', 'CPUExecutionProvider'] and retrying.
+****************************************
+*************** EP Error ***************
+EP Error /onnxruntime_src/onnxruntime/python/onnxruntime_pybind_state.cc:507 void onnxruntime::python::RegisterTensorRTPluginsAsCustomOps(PySessionOptions&, const onnxruntime::ProviderOptions&) Please install TensorRT libraries as mentioned in the GPU requirements page, make sure they're in the PATH or LD_LIBRARY_PATH, and that your GPU is supported.
+ when using ['TensorrtExecutionProvider', 'CUDAExecutionProvider', 'CPUExecutionProvider']
+Falling back to ['CUDAExecutionProvider', 'CPUExecutionProvider'] and retrying.
+****************************************
+INFO:werkzeug: * Restarting with stat
+[1;31m2025-01-24 13:11:43.167568371 [E:onnxruntime:Default, provider_bridge_ort.cc:1848 TryGetProviderInfo_TensorRT] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1539 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_tensorrt.so with error: libcublas.so.12: cannot open shared object file: No such file or directory
+[m
+[1;31m2025-01-24 13:11:43.202250151 [E:onnxruntime:Default, provider_bridge_ort.cc:1862 TryGetProviderInfo_CUDA] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1539 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_cuda.so with error: libcublasLt.so.12: cannot open shared object file: No such file or directory
+[m
+[0;93m2025-01-24 13:11:43.202297868 [W:onnxruntime:Default, onnxruntime_pybind_state.cc:993 CreateExecutionProviderInstance] Failed to create CUDAExecutionProvider. Require cuDNN 9.* and CUDA 12.*. Please install all dependencies as mentioned in the GPU requirements page (https://onnxruntime.ai/docs/execution-providers/CUDA-ExecutionProvider.html#requirements), make sure they're in the PATH, and that your GPU is supported.[m
+INFO:open_image_models.detection.core.yolo_v9.inference:Using ONNX Runtime with ['TensorrtExecutionProvider', 'CUDAExecutionProvider', 'CPUExecutionProvider'] provider(s)
+INFO:open_image_models.detection.pipeline.license_plate:Initialized LicensePlateDetector with model /home/sastr/.cache/open-image-models/yolo-v9-t-384-license-plate-end2end/yolo-v9-t-384-license-plates-end2end.onnx
+[1;31m2025-01-24 13:11:43.367971360 [E:onnxruntime:Default, provider_bridge_ort.cc:1848 TryGetProviderInfo_TensorRT] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1539 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_tensorrt.so with error: libcublas.so.12: cannot open shared object file: No such file or directory
+[m
+[1;31m2025-01-24 13:11:43.392151654 [E:onnxruntime:Default, provider_bridge_ort.cc:1862 TryGetProviderInfo_CUDA] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1539 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_cuda.so with error: libcublasLt.so.12: cannot open shared object file: No such file or directory
+[m
+[0;93m2025-01-24 13:11:43.392211772 [W:onnxruntime:Default, onnxruntime_pybind_state.cc:993 CreateExecutionProviderInstance] Failed to create CUDAExecutionProvider. Require cuDNN 9.* and CUDA 12.*. Please install all dependencies as mentioned in the GPU requirements page (https://onnxruntime.ai/docs/execution-providers/CUDA-ExecutionProvider.html#requirements), make sure they're in the PATH, and that your GPU is supported.[m
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 147-932-764
+INFO:werkzeug: * Detected change in '/home/sastr/license_plate_ocr/script/fast_alpr_script.py', reloading
+*************** EP Error ***************
+EP Error /onnxruntime_src/onnxruntime/python/onnxruntime_pybind_state.cc:507 void onnxruntime::python::RegisterTensorRTPluginsAsCustomOps(PySessionOptions&, const onnxruntime::ProviderOptions&) Please install TensorRT libraries as mentioned in the GPU requirements page, make sure they're in the PATH or LD_LIBRARY_PATH, and that your GPU is supported.
+ when using ['TensorrtExecutionProvider', 'CUDAExecutionProvider', 'CPUExecutionProvider']
+Falling back to ['CUDAExecutionProvider', 'CPUExecutionProvider'] and retrying.
+****************************************
+*************** EP Error ***************
+EP Error /onnxruntime_src/onnxruntime/python/onnxruntime_pybind_state.cc:507 void onnxruntime::python::RegisterTensorRTPluginsAsCustomOps(PySessionOptions&, const onnxruntime::ProviderOptions&) Please install TensorRT libraries as mentioned in the GPU requirements page, make sure they're in the PATH or LD_LIBRARY_PATH, and that your GPU is supported.
+ when using ['TensorrtExecutionProvider', 'CUDAExecutionProvider', 'CPUExecutionProvider']
+Falling back to ['CUDAExecutionProvider', 'CPUExecutionProvider'] and retrying.
+****************************************
+INFO:werkzeug: * Restarting with stat
+[1;31m2025-01-24 13:11:49.664541606 [E:onnxruntime:Default, provider_bridge_ort.cc:1848 TryGetProviderInfo_TensorRT] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1539 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_tensorrt.so with error: libcublas.so.12: cannot open shared object file: No such file or directory
+[m
+[1;31m2025-01-24 13:11:49.715745986 [E:onnxruntime:Default, provider_bridge_ort.cc:1862 TryGetProviderInfo_CUDA] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1539 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_cuda.so with error: libcublasLt.so.12: cannot open shared object file: No such file or directory
+[m
+[0;93m2025-01-24 13:11:49.715894541 [W:onnxruntime:Default, onnxruntime_pybind_state.cc:993 CreateExecutionProviderInstance] Failed to create CUDAExecutionProvider. Require cuDNN 9.* and CUDA 12.*. Please install all dependencies as mentioned in the GPU requirements page (https://onnxruntime.ai/docs/execution-providers/CUDA-ExecutionProvider.html#requirements), make sure they're in the PATH, and that your GPU is supported.[m
+INFO:open_image_models.detection.core.yolo_v9.inference:Using ONNX Runtime with ['TensorrtExecutionProvider', 'CUDAExecutionProvider', 'CPUExecutionProvider'] provider(s)
+INFO:open_image_models.detection.pipeline.license_plate:Initialized LicensePlateDetector with model /home/sastr/.cache/open-image-models/yolo-v9-t-384-license-plate-end2end/yolo-v9-t-384-license-plates-end2end.onnx
+[1;31m2025-01-24 13:11:49.864788546 [E:onnxruntime:Default, provider_bridge_ort.cc:1848 TryGetProviderInfo_TensorRT] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1539 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_tensorrt.so with error: libcublas.so.12: cannot open shared object file: No such file or directory
+[m
+[1;31m2025-01-24 13:11:49.891902238 [E:onnxruntime:Default, provider_bridge_ort.cc:1862 TryGetProviderInfo_CUDA] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1539 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_cuda.so with error: libcublasLt.so.12: cannot open shared object file: No such file or directory
+[m
+[0;93m2025-01-24 13:11:49.892120479 [W:onnxruntime:Default, onnxruntime_pybind_state.cc:993 CreateExecutionProviderInstance] Failed to create CUDAExecutionProvider. Require cuDNN 9.* and CUDA 12.*. Please install all dependencies as mentioned in the GPU requirements page (https://onnxruntime.ai/docs/execution-providers/CUDA-ExecutionProvider.html#requirements), make sure they're in the PATH, and that your GPU is supported.[m
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 147-932-764
+INFO:werkzeug: * Detected change in '/home/sastr/license_plate_ocr/app.py', reloading
+*************** EP Error ***************
+EP Error /onnxruntime_src/onnxruntime/python/onnxruntime_pybind_state.cc:507 void onnxruntime::python::RegisterTensorRTPluginsAsCustomOps(PySessionOptions&, const onnxruntime::ProviderOptions&) Please install TensorRT libraries as mentioned in the GPU requirements page, make sure they're in the PATH or LD_LIBRARY_PATH, and that your GPU is supported.
+ when using ['TensorrtExecutionProvider', 'CUDAExecutionProvider', 'CPUExecutionProvider']
+Falling back to ['CUDAExecutionProvider', 'CPUExecutionProvider'] and retrying.
+****************************************
+*************** EP Error ***************
+EP Error /onnxruntime_src/onnxruntime/python/onnxruntime_pybind_state.cc:507 void onnxruntime::python::RegisterTensorRTPluginsAsCustomOps(PySessionOptions&, const onnxruntime::ProviderOptions&) Please install TensorRT libraries as mentioned in the GPU requirements page, make sure they're in the PATH or LD_LIBRARY_PATH, and that your GPU is supported.
+ when using ['TensorrtExecutionProvider', 'CUDAExecutionProvider', 'CPUExecutionProvider']
+Falling back to ['CUDAExecutionProvider', 'CPUExecutionProvider'] and retrying.
+****************************************
+INFO:werkzeug: * Restarting with stat
+[1;31m2025-01-24 13:12:01.014434829 [E:onnxruntime:Default, provider_bridge_ort.cc:1848 TryGetProviderInfo_TensorRT] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1539 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_tensorrt.so with error: libcublas.so.12: cannot open shared object file: No such file or directory
+[m
+[1;31m2025-01-24 13:12:01.063850512 [E:onnxruntime:Default, provider_bridge_ort.cc:1862 TryGetProviderInfo_CUDA] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1539 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_cuda.so with error: libcublasLt.so.12: cannot open shared object file: No such file or directory
+[m
+[0;93m2025-01-24 13:12:01.063995610 [W:onnxruntime:Default, onnxruntime_pybind_state.cc:993 CreateExecutionProviderInstance] Failed to create CUDAExecutionProvider. Require cuDNN 9.* and CUDA 12.*. Please install all dependencies as mentioned in the GPU requirements page (https://onnxruntime.ai/docs/execution-providers/CUDA-ExecutionProvider.html#requirements), make sure they're in the PATH, and that your GPU is supported.[m
+INFO:open_image_models.detection.core.yolo_v9.inference:Using ONNX Runtime with ['TensorrtExecutionProvider', 'CUDAExecutionProvider', 'CPUExecutionProvider'] provider(s)
+INFO:open_image_models.detection.pipeline.license_plate:Initialized LicensePlateDetector with model /home/sastr/.cache/open-image-models/yolo-v9-t-384-license-plate-end2end/yolo-v9-t-384-license-plates-end2end.onnx
+[1;31m2025-01-24 13:12:01.203833198 [E:onnxruntime:Default, provider_bridge_ort.cc:1848 TryGetProviderInfo_TensorRT] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1539 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_tensorrt.so with error: libcublas.so.12: cannot open shared object file: No such file or directory
+[m
+[1;31m2025-01-24 13:12:01.241572827 [E:onnxruntime:Default, provider_bridge_ort.cc:1862 TryGetProviderInfo_CUDA] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1539 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_cuda.so with error: libcublasLt.so.12: cannot open shared object file: No such file or directory
+[m
+[0;93m2025-01-24 13:12:01.241627541 [W:onnxruntime:Default, onnxruntime_pybind_state.cc:993 CreateExecutionProviderInstance] Failed to create CUDAExecutionProvider. Require cuDNN 9.* and CUDA 12.*. Please install all dependencies as mentioned in the GPU requirements page (https://onnxruntime.ai/docs/execution-providers/CUDA-ExecutionProvider.html#requirements), make sure they're in the PATH, and that your GPU is supported.[m
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 147-932-764
