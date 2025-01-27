@@ -65,6 +65,7 @@ def ocr():
             try:
                 time_str = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
                 time_ = time.strftime("%H:%M:%S", time.localtime())
+                time_for_name = time.strftime("%H-%M-%S", time.localtime())
                 date_ = time.strftime("%Y-%m-%d", time.localtime())
                 
                 image = change_image_orientation_to_verical(image, action, time_str)
@@ -76,10 +77,10 @@ def ocr():
                     return render_template('ocr.html', message='Tidak Terdeteksi Plat Nomor atau Plat Nomor Lebih dari 1. Mohon Untuk Input Ulang.', message_type='danger')
                 
                 # Dikarenakan model hanya mampu memproses maksimal 8 digit, jika ada yang lebih dari atau sama maka akan dicek ulang
-                label = fast_alpr[5]
+                # label = fast_alpr[5]
                 
                 # Kode dibawah memungkinkan memproses data jika plat nomor tidak bisa diproses OCR
-                # label = check_untrained_data()
+                label = check_untrained_data(fast_alpr[5])
                 
                 if isMarked(label):
                     marked = "MARKED"
@@ -87,7 +88,7 @@ def ocr():
                     marked = ""
                 
                 # image, x1, y1, x2, y2, action, ocr_result, confidence, datetime, date, time, marker
-                save = crop_and_save_image(image, fast_alpr[1], fast_alpr[2], fast_alpr[3], fast_alpr[4], action, fast_alpr[5], fast_alpr[0], time_str, date_, time_, marked)
+                save = crop_and_save_image(image, fast_alpr[1], fast_alpr[2], fast_alpr[3], fast_alpr[4], action, label, fast_alpr[0], time_str, date_, time_for_name, marked)
                 
                 img_temp = cv2.imread(save[0])
                 data = numpy_to_base64(img_temp)

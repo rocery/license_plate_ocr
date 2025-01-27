@@ -1,2 +1,9 @@
 venv/
 
+img_ocr/marked/*
+img_ocr/ocr/*
+img_ocr/upload/*
+
+!img_ocr/marked/*.csv
+!img_ocr/ocr/*.csv
+!img_ocr/upload/*.csv

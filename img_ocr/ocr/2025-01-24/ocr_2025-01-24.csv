@@ -1,2 +1,4 @@
 Path,Action,OCR Result,Confidence,Datetime,Marker
 img_ocr/ocr/2025-01-24/Z9273MG_0.97_Masuk_2025-01-24_08:25:32.png,Masuk,Z9273MG,0.97,2025-01-24 08:25:32,
+img_ocr/ocr/2025-01-24/B1931TYP_0.97_Masuk_2025-01-24_16:30:51.png,Masuk,B1931TYP,0.97,2025-01-24 16:30:51,
+img_ocr/ocr/2025-01-24/B1931TYP_0.97_Keluar_2025-01-24_16:31:12.png,Keluar,B1931TYP,0.97,2025-01-24 16:31:12,

@@ -66,9 +66,7 @@ def check_untrained_data(plate):
         
         # Data Mapping dilihat dari data dari data 'Marked' pada file /img_ocr_ocr/ocr/all_ocr.csv
         mapping = {
-            "AB1234": "AB1234CAY",
-            "AV4123": "AV4123GAL",
-            "BE3213": "BE3213AMD"
+            "BE8775": "BE8775AML"
         }
         
         if plate_ in mapping:
