@@ -32,6 +32,7 @@ data = None
 label = None # Hasil dari ocr plat nomor
 date_ = None
 time_ = None
+confidence = None
 
 @app.route('/ocr', methods=['GET', 'POST'])
 def ocr():
@@ -78,6 +79,8 @@ def ocr():
                 
                 # Dikarenakan model hanya mampu memproses maksimal 8 digit, jika ada yang lebih dari atau sama maka akan dicek ulang
                 # label = fast_alpr[5]
+                
+                confidence = fast_alpr[0]
                 
                 print("Data Asli")
                 print(f"OCR: {fast_alpr[5]}")
@@ -148,22 +151,22 @@ def ocr():
                     if last_loc:
                         message = 'Ekspedisi: {} Sudah Didalam. Tidak Bisa Diproses Masuk 2x.'.format(label)
                         message_type = 'danger'
-                        return render_template('ocr.html', message=message, message_type=message_type, data=data, label=label)
+                        return render_template('ocr.html', message=message, message_type=message_type, data=data, confidence=confidence, label=label)
                     else:
                         message = 'Ekspedisi: {} Berhasil Masuk.'.format(label)
                         message_type = 'success'
-                        return render_template('ocr.html', message=message, message_type=message_type, data=data, label=label, type=ekspedisi)
+                        return render_template('ocr.html', message=message, message_type=message_type, data=data, confidence=confidence, label=label, type=ekspedisi)
                 else:
                     last_loc = proses_masuk_sql(date_, label, time_, 'security', entryType)
                     
                     if last_loc:
                         message = 'Ekspedisi: {} Sudah Didalam. Tidak Bisa Diproses Masuk 2x.'.format(label)
                         message_type = 'danger'
-                        return render_template('ocr.html', message=message, message_type=message_type, data=data, label=label)
+                        return render_template('ocr.html', message=message, message_type=message_type, data=data, confidence=confidence, label=label)
                     else:
                         message = 'Ekspedisi: {} Tidak Terdaftar. Proses Tetap Dilanjutkan.'.format(label)
                         message_type = 'warning'
-                        return render_template('ocr.html', message=message, message_type=message_type, data=data, label=label)
+                        return render_template('ocr.html', message=message, message_type=message_type, data=data, confidence=confidence, label=label)
                 
             elif entryType == 'GA':
                 status_kendaraan_ga = get_kendaraan_ga(label)
@@ -173,26 +176,26 @@ def ocr():
                     if last_loc:
                         message = 'GA: {} Sudah Didalam. Tidak Bisa Diproses Masuk 2x.'.format(label)
                         message_type = 'danger'
-                        return render_template('ocr.html', message=message, message_type=message_type, data=data, label=label)
+                        return render_template('ocr.html', message=message, message_type=message_type, data=data, confidence=confidence, label=label)
                     else:
                         message = 'GA: {} Berhasil Masuk.'.format(label)
                         message_type = 'success'
-                        return render_template('ocr.html', message=message, message_type=message_type, data=data, label=label)
+                        return render_template('ocr.html', message=message, message_type=message_type, data=data, confidence=confidence, label=label)
                 else:
                     message = '{} Tidak Terdaftar Sebagai GA.'.format(label)
                     message_type = 'danger'
-                    return render_template('ocr.html', message=message, message_type=message_type, data=data, label=label)
+                    return render_template('ocr.html', message=message, message_type=message_type, data=data, confidence=confidence, label=label)
                 
             elif entryType == 'Tamu':
                 last_loc = proses_masuk_sql(date_, label, time_, 'security', entryType)
                 if last_loc:
                     message = 'Tamu: {} Sudah Didalam. Tidak Bisa Diproses Masuk 2x.'.format(label)
                     message_type = 'danger'
-                    return render_template('ocr.html', message=message, message_type=message_type, data=data, label=label)
+                    return render_template('ocr.html', message=message, message_type=message_type, data=data, confidence=confidence, label=label)
                 else:
                     message = 'Tamu: {} Berhasil Masuk. Hubungi Admin Untuk Pengisian Data PIC dan Keperluan.'.format(label)
                     message_type = 'success'
-                    return render_template('ocr.html', message=message, message_type=message_type, data=data, label=label)
+                    return render_template('ocr.html', message=message, message_type=message_type, data=data, confidence=confidence, label=label)
             
             else:
                 message = 'Jenis Kendaraan Tidak Diketahui. Input Ekspedisi, Tamu atau GA.'
@@ -204,11 +207,11 @@ def ocr():
             if last_loc:
                 message = 'Kendaraan: {} Sudah Diluar. Tidak Bisa Diproses Keluar 2x.'.format(label)
                 message_type = 'danger'
-                return render_template('ocr.html', message=message, message_type=message_type, data=data, label=label)
+                return render_template('ocr.html', message=message, message_type=message_type, data=data, confidence=confidence, label=label)
             else:
                 message = 'Kendaraan: {} Berhasil Keluar.'.format(label)
                 message_type = 'success'
-                return render_template('ocr.html', message=message, message_type=message_type, data=data, label=label)
+                return render_template('ocr.html', message=message, message_type=message_type, data=data, confidence=confidence, label=label)
          
         else:
             message = 'Tujuan Tidak Diketahui. Input Masuk atau Keluar'

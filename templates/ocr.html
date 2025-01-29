@@ -83,6 +83,12 @@
         </div>
     {% endif %}
 
+    {% if confidence %}
+        <div class="text-center">
+            <h6>Nilai: {{ confidence }}</h6>
+        </div>
+    {% endif %}
+
     {% if type and type|length > 2 %}
     <div class="text-center">
         <table id="dataMobil"class="table table-borderless table-responsive-sm">
