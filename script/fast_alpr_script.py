@@ -79,10 +79,34 @@ def check_untrained_data(plate):
         
     return plate_
 
-def isMarked(plate):
-    if len(plate) == 8:
+def check_low_confidence_data(plate, confidence):
+    plate_ =  None
+    if confidence <= 0.9:
+        plate_ = plate
+        mapping = {
+            "B9267UY": "B9267UYT",
+            "F9745FF": "F9745FE",
+            "DP7622YC": "D9762YC",
+            "B9667UY": "B9267UYT",
+        }
+        
+        if plate_ in mapping:
+            plate_ = mapping[plate]
+        else:
+            plate_ = plate
+    else:
+        plate_ = plate
+        
+    return plate_
+
+def isMarked(plate, confidence):
+    if confidence <= 0.9:
+        return True
+    elif len(plate) == 8:
         return (
             plate[:2].isalpha() and    # First two are letters
             plate[2:6].isdigit() and   # Middle 4 are digits
             plate[6:].isalpha()        # Last two are letters
         )
+    else:
+        return False

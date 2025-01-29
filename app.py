@@ -2,7 +2,7 @@ from flask import Flask, session, request, render_template, flash, redirect, url
 import time
 import cv2
 from script.csv_process import read_data_csv
-from script.fast_alpr_script import fast_alpr_process, check_untrained_data, isMarked
+from script.fast_alpr_script import fast_alpr_process, check_untrained_data, isMarked, check_low_confidence_data
 from script.image_preprocessing import change_image_orientation_to_verical, crop_and_save_image, numpy_to_base64
 from script.sql_db import edit_tamu_sql, list_ekspedisi_sql, list_ga_sql, all_data_sql, list_tamu, get_ekspedisi, proses_masuk_sql, proses_keluar_sql, get_kendaraan_ga
 import re
@@ -79,10 +79,23 @@ def ocr():
                 # Dikarenakan model hanya mampu memproses maksimal 8 digit, jika ada yang lebih dari atau sama maka akan dicek ulang
                 # label = fast_alpr[5]
                 
+                print("Data Asli")
+                print(f"OCR: {fast_alpr[5]}")
+                print(f"CNF: {fast_alpr[0]}")
+                                
                 # Kode dibawah memungkinkan memproses data jika plat nomor tidak bisa diproses OCR
-                label = check_untrained_data(fast_alpr[5])
+                label_ = check_untrained_data(fast_alpr[5])
+                print("Data Terproses 'check_untrained_data'")
+                print(f"OCR: {label_}")
+                print(f"CNF: {fast_alpr[0]}")
+            
+                # Cek plat nomor jika nilai confidence rendah
+                label = check_low_confidence_data(label_, fast_alpr[0])
+                print("Data Terproses 'check_low_confidence_data'")
+                print(f"OCR: {label}")
+                print(f"CNF: {fast_alpr[0]}")
                 
-                if isMarked(label):
+                if isMarked(label, fast_alpr[0]):
                     marked = "MARKED"
                 else:
                     marked = ""
