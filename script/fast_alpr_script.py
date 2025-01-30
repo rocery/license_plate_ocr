@@ -66,7 +66,8 @@ def check_untrained_data(plate):
         
         # Data Mapping dilihat dari data dari data 'Marked' pada file /img_ocr_ocr/ocr/all_ocr.csv
         mapping = {
-            "BE8775": "BE8775AML"
+            "BE8775": "BE8775AML",
+            "BE8928": "BE8928AML"
         }
         
         if plate_ in mapping:
@@ -88,6 +89,10 @@ def check_low_confidence_data(plate, confidence):
             "F9745FF": "F9745FE",
             "DP7622YC": "D9762YC",
             "B9667UY": "B9267UYT",
+            "B9265SCO": "B9265SCD",
+            "B9489XDC": "B9489KDC",
+            "B9241VTT": "B9241UYT",
+            "B9264UY": "B9264UYT",
         }
         
         if plate_ in mapping:
