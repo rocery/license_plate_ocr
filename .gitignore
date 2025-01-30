@@ -7,3 +7,5 @@ img_ocr/upload/*
 !img_ocr/marked/*.csv
 !img_ocr/ocr/*.csv
 !img_ocr/upload/*.csv
+
+license_plate_ocr.log
