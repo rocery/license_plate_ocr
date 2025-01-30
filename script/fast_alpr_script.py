@@ -93,6 +93,8 @@ def check_low_confidence_data(plate, confidence):
             "B9489XDC": "B9489KDC",
             "B9241VTT": "B9241UYT",
             "B9264UY": "B9264UYT",
+            "M1417XYC": "W1417XI",
+            
         }
         
         if plate_ in mapping:
