@@ -94,6 +94,15 @@ def check_low_confidence_data(plate, confidence):
             "B9241VTT": "B9241UYT",
             "B9264UY": "B9264UYT",
             "M1417XYC": "W1417XI",
+            "B9122YU": "B9122BYW",
+            "B9207KAA": "B9207KAU",
+            "B9272YXR": "B9272VXR",
+            "B9346AOD": "B9346KOQ",
+            "B9704SEU": "B9704TEU",
+            "B9839QQA": "B9839UQA",
+            "L8009UUU": "L8009UUD",
+            
+            
             
         }
         
@@ -117,3 +126,8 @@ def isMarked(plate, confidence):
         )
     else:
         return False
+    
+def is_start_with_numeric(plate):
+    return (
+        plate[:1].isdigit()
+    )

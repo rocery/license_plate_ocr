@@ -2,7 +2,7 @@ from flask import Flask, session, request, render_template, flash, redirect, url
 import time
 import cv2
 from script.csv_process import read_data_csv
-from script.fast_alpr_script import fast_alpr_process, check_untrained_data, isMarked, check_low_confidence_data
+from script.fast_alpr_script import fast_alpr_process, check_untrained_data, isMarked, check_low_confidence_data, is_start_with_numeric
 from script.image_preprocessing import change_image_orientation_to_verical, crop_and_save_image, numpy_to_base64
 from script.sql_db import edit_tamu_sql, list_ekspedisi_sql, list_ga_sql, all_data_sql, list_tamu, get_ekspedisi, proses_masuk_sql, proses_keluar_sql, get_kendaraan_ga
 import re
@@ -77,6 +77,8 @@ def ocr():
                 if fast_alpr == False:
                     return render_template('ocr.html', message='Tidak Terdeteksi Plat Nomor atau Plat Nomor Lebih dari 1. Mohon Untuk Input Ulang.', message_type='danger')
                 
+                if is_start_with_numeric(fast_alpr[5]):
+                    return render_template('ocr.html', message='Hasil Pembacaan Salah, Mohon Untuk Input Ulang.', message_type='danger', label=fast_alpr[5])
                 # Dikarenakan model hanya mampu memproses maksimal 8 digit, jika ada yang lebih dari atau sama maka akan dicek ulang
                 # label = fast_alpr[5]
                 
