@@ -136,7 +136,7 @@ def save_marked_image(cropped_image, date, time, ocr_result):
     os.makedirs(marked_dir, exist_ok = True)
     
     # Generate unique filename
-    filename = f"{ocr_result}_{date}_{time}.png"
+    filename = f"{date}_{time}_{ocr_result}.png"
     full_path = os.path.join(marked_dir, filename)
     
     # Save cropped image

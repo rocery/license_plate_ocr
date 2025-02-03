@@ -109,7 +109,17 @@ def check_low_confidence_data(plate, confidence):
             "N8375HN": "F8375HN",
             "B9346AOO": "B9346KOQ",
             "B9346AOZ": "B9346KOQ",
-            "B9718WWX": "B9718UWX"
+            "B9718WWX": "B9718UWX",
+            "B9346AOO": "B9346KOQ",
+            "B9718WWX": "B9718UWX",
+            "B9346AOZ": "B9346KOQ",
+            "B3248OT": "B9248UYT",
+            "BE8771AL": "BE8771AML",
+            "BE0334J": "BE8284OU",
+            "BE234CC": "BE8284OU",
+            "BLB72S": "BE8284OU",
+            "B3950CUC": "B9950CUC",
+            "BB950CCC": "B9950CUC",
             
             
             
