@@ -107,6 +107,9 @@ def check_low_confidence_data(plate, confidence):
             "BW276NU": "BE8276NU",
             "BE8276NV": "BE8276NU",
             "N8375HN": "F8375HN",
+            "B9346AOO": "B9346KOQ",
+            "B9346AOZ": "B9346KOQ",
+            "B9718WWX": "B9718UWX"
             
             
             
