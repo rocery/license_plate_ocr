@@ -120,7 +120,11 @@ def check_low_confidence_data(plate, confidence):
             "BLB72S": "BE8284OU",
             "B3950CUC": "B9950CUC",
             "BB950CCC": "B9950CUC",
-            
+            "B944ZXC": "B9344KCG",
+            "B283TTFS": "B2831TFS",
+            "B9518TV": "B9518TXV",
+            "BB8350FM": "BE8960AA",
+            "BP835OMI": "BE8960AA",
             
             
         }
