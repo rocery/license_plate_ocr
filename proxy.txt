@@ -1,0 +1,27 @@
+Cara Setting Proxy pada server SSL:
+1. Pastikan web Proxy SSL bisa diakses menggunakan port 443 atau https
+2. Buka file C:\xampp\apache\conf\httpd.conf
+3. Uncomment baris berikut:
+   LoadModule proxy_module modules/mod_proxy.so
+   LoadModule proxy_http_module modules/mod_proxy_http.so
+4. Buka file C:\xampp\apache\conf\extra\httpd-vhosts.conf
+5. Tambahkan konfigurasi dipaling bawah:
+   <VirtualHost *:443>
+        ServerName 192.168.10.219
+        SSLEngine on
+        SSLCertificateFile "conf/ssl/sttbekasi.crt"
+        SSLCertificateKeyFile "conf/ssl/server-sttbekasi_unencrypted.key"
+        SSLCACertificateFile "conf/ssl/sttbekasi_ca-bundle.crt"
+
+        ProxyPass "/ocr" "http://192.168.10.223:5000/ocr"
+        ProxyPassReverse "/ocr" "http://192.168.10.223:5000/ocr"
+        
+        ProxyPass "/static/" "http://192.168.10.223:5000/static/"
+        ProxyPassReverse "/static/" "http://192.168.10.223:5000/static/"
+        
+        ErrorLog "C:/xampp/apache/logs/error_ocr.log"
+        CustomLog "C:/xampp/apache/logs/access_ocr.log" common
+   </VirtualHost>
+6. Restart Apache pada Xampp Control Panel
+7. Cek sttbekasi.com/ocr
+8. Jika gagal hapus cache browser
