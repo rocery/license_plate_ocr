@@ -100,6 +100,9 @@ def ocr():
                 print(f"OCR: {label}")
                 print(f"CNF: {fast_alpr[0]}")
                 
+                # To Do
+                # Jika plat ada di check_untrained_data atau check_low_confidence_data maka tidak perlu proses Marked
+                
                 if isMarked(label, fast_alpr[0]):
                     marked = "MARKED"
                 else:
