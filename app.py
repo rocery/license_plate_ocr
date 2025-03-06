@@ -33,6 +33,7 @@ label = None # Hasil dari ocr plat nomor
 date_ = None
 time_ = None
 confidence = None
+ocr_result = None
 
 @app.route('/ocr', methods=['GET', 'POST'])
 def ocr():
@@ -83,30 +84,34 @@ def ocr():
                 # label = fast_alpr[5]
                 
                 confidence = fast_alpr[0]
+                ocr_result = fast_alpr[5]
                 
                 print("Data Asli")
-                print(f"OCR: {fast_alpr[5]}")
-                print(f"CNF: {fast_alpr[0]}")
+                print(f"OCR: {confidence}")
+                print(f"CNF: {ocr_result}")
                                 
                 # Kode dibawah memungkinkan memproses data jika plat nomor tidak bisa diproses OCR
-                label_ = check_untrained_data(fast_alpr[5])
+                label_ = check_untrained_data(ocr_result)
                 print("Data Terproses 'check_untrained_data'")
                 print(f"OCR: {label_}")
-                print(f"CNF: {fast_alpr[0]}")
+                print(f"CNF: {confidence}")
             
                 # Cek plat nomor jika nilai confidence rendah
-                label = check_low_confidence_data(label_, fast_alpr[0])
+                label, status_checking = check_low_confidence_data(label_, confidence)
                 print("Data Terproses 'check_low_confidence_data'")
                 print(f"OCR: {label}")
-                print(f"CNF: {fast_alpr[0]}")
+                print(f"CNF: {confidence}")
                 
-                # To Do
                 # Jika plat ada di check_untrained_data atau check_low_confidence_data maka tidak perlu proses Marked
-                
-                if isMarked(label, fast_alpr[0]):
+                if status_checking:
+                    confidence = 0.99
+                    
+                if isMarked(label, confidence):
                     marked = "MARKED"
+                    print(marked)
                 else:
                     marked = ""
+                    print("NOT MARKED")
                 
                 # image, x1, y1, x2, y2, action, ocr_result, confidence, datetime, date, time, marker
                 save = crop_and_save_image(image, fast_alpr[1], fast_alpr[2], fast_alpr[3], fast_alpr[4], action, label, fast_alpr[0], time_str, date_, time_for_name, marked)
