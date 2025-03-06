@@ -80,9 +80,8 @@ def ocr():
                 
                 if is_start_with_numeric(fast_alpr[5]):
                     return render_template('ocr.html', message='Hasil Pembacaan Salah, Mohon Untuk Input Ulang.', message_type='danger', label=fast_alpr[5])
-                # Dikarenakan model hanya mampu memproses maksimal 8 digit, jika ada yang lebih dari atau sama maka akan dicek ulang
-                # label = fast_alpr[5]
                 
+                # Dikarenakan model hanya mampu memproses maksimal 8 digit, jika ada yang lebih dari atau sama maka akan dicek ulang
                 confidence = fast_alpr[0]
                 ocr_result = fast_alpr[5]
                 
@@ -104,6 +103,8 @@ def ocr():
                 
                 # Jika plat ada di check_untrained_data atau check_low_confidence_data maka tidak perlu proses Marked
                 if status_checking:
+                    # confidence 0.99 tidak mungkin ada, maks 0.9
+                    # Jika ada 0.99 confidence maka itu sudah diproses pengecekan
                     confidence = 0.99
                     
                 if isMarked(label, confidence):
@@ -124,7 +125,7 @@ def ocr():
                 
                 # return render_template('ocr.html', message=fast_alpr, data=data, message_type='success')
             
-            except (IOError, SyntaxError):
+            except (IOError, SyntaxError, TypeError):
                 return render_template('ocr.html', message='Gagal Memproses Gambar. Mohon Untuk Input Ulang.', message_type='danger')
         
         """
