@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "save-img-base.html" %}
 
 {% block title %}
     OCR
@@ -13,17 +13,56 @@
         text-align: center;
     }
     body {
-        padding-top: 56px;
+        padding-top: 10px;
+        max-width: 320px;
+        max-height: 480px;
+    }
+    #webcam-container {
+        position: relative;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    #webcam {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+    }
+    .camera-controls {
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
     }
 </style>
 <div class="container mt-2">
-    <h3 class="text-center">OCR</h3>
+    <!-- <h3 class="text-center">OCR</h3> -->
     <div class="card">
         <div class="card-body">
-            <form id="actionForm" action="/ocr" method="post" enctype="multipart/form-data">
+            <form id="actionForm" action="/ocr/save_img" method="post" enctype="multipart/form-data">
                 <div class="mb-3 text-center">
-                    <label for="image" class="form-label">Pilih Foto yang Akan Diproses</label>
-                    <input class="form-control" type="file" id="image" name="image" capture="environment" accept="image/*;capture=environment" onchange="previewImage(event)">
+                    <!-- <label class="form-label">Foto Plat Nomor Kendaraan</label> -->
+                    
+                    <!-- Webcam container -->
+                    <div id="webcam-container">
+                        <video id="webcam" autoplay playsinline style="display: none;"></video>
+                    </div>
+                    
+                    <!-- Camera controls -->
+                    <div class="camera-controls">
+                        <button type="button" id="startCamera" class="btn-lg btn btn-primary">Kamera</button>
+                        <button type="button" id="capturePhoto" class="btn-lg btn btn-primary" disabled hidden>Ambil Foto</button>
+                        <button type="button" id="retakePhoto" class="btn-lg btn btn-warning" style="display: none;">Foto Ulang</button>
+                        <a href="javascript:location.reload()">
+                            <button type="button" class="btn-lg btn btn-danger">Refresh</button>
+                        </a>
+                    </div>
+                    
+                    <!-- Hidden file input (will be filled programmatically) -->
+                    <input type="file" id="imageFile" name="image" style="display: none;">
+                </div>
+
+                <div class="mb-3">
+                    <img id="imagePreview" class="mx-auto d-block img-thumbnail" src="#" alt="Image preview" style="display:none !important; max-width: 100%; height: auto;">
                 </div>
 
                 <!-- Radio buttons -->
@@ -43,14 +82,10 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- KM input, hidden by default -->
                 <div class="mb-3" id="kmInputDiv" style="display: none;">
                     <input type="number" id="km" name="km" class="form-control" placeholder="KM Kendaraan" required>
-                </div>
-
-                <div class="mb-3">
-                    <img id="imagePreview" class="mx-auto d-block img-thumbnail" src="#" alt="Image preview" style="display:none !important; max-width: 100%; height: auto;">
                 </div>
 
                 <div class="mb-3">
@@ -62,6 +97,7 @@
                             <button type="button" id="keluarButton" class="btn btn-danger btn-lg w-100" onclick="submitForm('Keluar')" disabled>Keluar</button>
                         </div>
                     </div>
+
                     <!-- ADD Loading -->
                     <button class="btn btn-secondary btn-lg w-100" id="loadingButton" style="display: none;" disabled>
                         <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
@@ -181,10 +217,111 @@
 </div>
 
 <script>
+    // Global variables
+    let stream;
+    let video;
+    let canvas;
+    let capturedBlob = null;
+
     window.onload = function() {
-        fetchOCRData();
         checkType();  // Call checkType when the page loads
+        
+        // Initialize video and canvas elements
+        video = document.getElementById('webcam');
+        canvas = document.createElement('canvas');
+        
+        // Add event listeners for webcam buttons
+        document.getElementById('startCamera').addEventListener('click', startCamera);
+        document.getElementById('capturePhoto').addEventListener('click', capturePhoto);
+        document.getElementById('retakePhoto').addEventListener('click', retakePhoto);
     };
+    
+    // Function to start the webcam
+    async function startCamera() {
+        try {
+            // Request camera permissions with desired constraints
+            stream = await navigator.mediaDevices.getUserMedia({
+                video: {
+                    facingMode: 'environment', // Prefer rear camera if available
+                    width: { ideal: 1280 },
+                    height: { ideal: 720 }
+                }
+            });
+            
+            // Set the video source and play
+            video.srcObject = stream;
+            video.style.display = 'block'; // Show the video element
+            await video.play();
+            
+            // Enable the capture button once camera is started
+            document.getElementById('capturePhoto').disabled = false;
+            document.getElementById('capturePhoto').hidden = false;
+            document.getElementById('startCamera').disabled = true;
+            document.getElementById('startCamera').hidden = true;
+        } catch (err) {
+            alert('Error accessing camera: ' + err.message);
+            console.error('Error accessing camera:', err);
+        }
+    }
+    
+    // Function to capture photo from webcam
+    function capturePhoto() {
+        // Set canvas dimensions to match video
+        canvas.width = video.videoWidth;
+        canvas.height = video.videoHeight;
+        
+        // Draw the current video frame on the canvas
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+        
+        // Convert canvas to blob
+        canvas.toBlob(function(blob) {
+            capturedBlob = blob;
+            
+            // Create a file from the blob
+            const fileName = 'webcam-capture-' + new Date().getTime() + '.jpg';
+            
+            // Show the preview from the blob URL
+            const imagePreview = document.getElementById('imagePreview');
+            imagePreview.src = URL.createObjectURL(blob);
+            imagePreview.style.display = 'block';
+            
+            // Stop the camera stream
+            if (stream) {
+                stream.getTracks().forEach(track => track.stop());
+            }
+            
+            // Hide video element and show retake button
+            video.style.display = 'none';
+            document.getElementById('capturePhoto').style.display = 'none';
+            document.getElementById('retakePhoto').style.display = 'inline-block';
+            document.getElementById('startCamera').disabled = true;
+            
+            // Enable submission buttons
+            document.getElementById('masukButton').disabled = false;
+            document.getElementById('keluarButton').disabled = false;
+        }, 'image/jpeg', 0.9);
+    }
+    
+    // Function to retake photo
+    function retakePhoto() {
+        // Clear the preview and captured blob
+        document.getElementById('imagePreview').style.display = 'none';
+        capturedBlob = null;
+        
+        // Reset UI elements
+        video.style.display = 'block';
+        document.getElementById('retakePhoto').style.display = 'none';
+        document.getElementById('capturePhoto').style.display = 'inline-block';
+        document.getElementById('startCamera').disabled = false;
+        
+        // Disable submission buttons until a new photo is captured
+        document.getElementById('masukButton').disabled = true;
+        document.getElementById('keluarButton').disabled = true;
+        
+        // Restart the camera
+        startCamera();
+    }
 
     function fetchOCRData() {
         fetch('/ocr/get_data_all_ocr')
@@ -243,23 +380,23 @@
         })
         .catch(error => console.error('Error fetching data:', error));
     }
-    
-    $(document).ready(function() {
-        fetchOCRData();  // Fetch data and initialize the table
-    });
+    setInterval(fetchOCRData, 10000);
 
     var types = document.getElementById('data');
     console.log(types)
 
     function checkType() {
         // Get the inner text from the element with id 'data'
-        var type = document.getElementById('data').innerText.trim(); // Use innerText instead of getAttribute
-        console.log(type);
+        var typeElement = document.getElementById('data');
+        if (typeElement) {
+            var type = typeElement.innerText.trim(); // Use innerText instead of getAttribute
+            console.log(type);
 
-        // Check if the type is 'GA'
-        if (type === 'GA') {
-            var modal = new bootstrap.Modal(document.getElementById('kmModal'));
-            modal.show();
+            // Check if the type is 'GA'
+            if (type === 'GA') {
+                var modal = new bootstrap.Modal(document.getElementById('kmModal'));
+                modal.show();
+            }
         }
     }
 
@@ -282,93 +419,74 @@
         }
         document.getElementById('kmForm').submit();
     }
-
-    function previewImage(event) {
-        const input = event.target;
-        const file = input.files[0];
-        const preview = document.getElementById('imagePreview');
-
-        if (file) {
-            console.log(`Original Image Size: ${file.size / 1024} KB`);
-
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                const img = new Image();
-                img.src = e.target.result;
-                img.onload = function() {
-                    const canvas = document.createElement('canvas');
-                    const ctx = canvas.getContext('2d');
-
-                    const maxWidth = 1000; // Set the desired maximum width
-                    let width = img.width;
-                    let height = img.height;
-
-                    if (width > maxWidth) {
-                        height *= maxWidth / width;
-                        width = maxWidth;
-                    }
-
-                    canvas.width = width;
-                    canvas.height = height;
-                    ctx.drawImage(img, 0, 0, width, height);
-
-                    canvas.toBlob(function(blob) {
-                        console.log(`Resized Image Size: ${blob.size / 1024} KB`);
-
-                        // Create a new File object with the processed image
-                        const resizedFile = new File([blob], file.name, {
-                            type: file.type,
-                            lastModified: Date.now()
-                        });
-
-                        // Replace the original file in the input with the resized file
-                        const dataTransfer = new DataTransfer();
-                        dataTransfer.items.add(resizedFile);
-                        input.files = dataTransfer.files;
-
-                        const resizedReader = new FileReader();
-                        resizedReader.onload = function(e) {
-                            preview.src = e.target.result;
-                            preview.style.display = 'block';
-                        };
-                        resizedReader.readAsDataURL(resizedFile);
-
-                        // Enable buttons when a file is selected
-                        document.getElementById('masukButton').disabled = false;
-                        document.getElementById('keluarButton').disabled = false;
-
-                    }, file.type);
-                };
-            };
-            reader.readAsDataURL(file);
-        } else {
-            preview.src = '#';
-            preview.style.display = 'none';
-
-            // Disable buttons if no file is selected
-            document.getElementById('masukButton').disabled = true;
-            document.getElementById('keluarButton').disabled = true;
-        }
-    }
     
     function submitForm(actionValue) {
-        if (confirm(`Pastikan Plat Nomor Kendaraan Terlihat Jelas,\nLanjutkan Dengan Kategori "${actionValue}"?`)) {
+        // Check if image has been captured
+        if (!capturedBlob) {
+            alert('Silahkan ambil foto terlebih dahulu.');
+            return;
+        }
+        
+        // Check if entry type is selected
+        const entryType = document.querySelector('input[name="entryType"]:checked');
+        if (!entryType) {
+            alert('Silahkan pilih kategori kendaraan (Ekspedisi/Tamu/GA).');
+            return;
+        }
+        
+        // Check if KM is filled for GA type
+        if (entryType.value === 'GA' && !document.getElementById('km').value) {
+            alert('Silahkan isi KM kendaraan untuk kategori GA.');
+            return;
+        }
+        
+        
             // Hide the buttons and show the spinner
             document.getElementById('masukButton').style.display = 'none';
             document.getElementById('keluarButton').style.display = 'none';
             document.getElementById('loadingButton').style.display = 'inline-block';
     
-            // Create a hidden input to hold the action value
-            const form = document.getElementById('actionForm');
-            const input = document.createElement('input');
-            input.type = 'hidden';
-            input.name = 'action';
-            input.value = actionValue;
-            form.appendChild(input);
-    
-            // Submit the form
-            form.submit();
-        }
+            // Create a file from the blob to use in form submission
+            const fileName = 'webcam-capture-' + new Date().getTime() + '.jpg';
+            const capturedFile = new File([capturedBlob], fileName, {type: 'image/jpeg'});
+            
+            // Create a FormData object to properly submit the file
+            const formData = new FormData();
+            formData.append('image', capturedFile);
+            formData.append('action', actionValue);
+            formData.append('entryType', entryType.value);
+            
+            // Add KM value if needed
+            if (entryType.value === 'GA') {
+                formData.append('km', document.getElementById('km').value);
+            }
+            
+            // Submit using fetch instead of form
+            fetch('/ocr/save_img', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (response.redirected) {
+                    window.location.href = response.url;
+                } else {
+                    return response.text().then(html => {
+                        document.open();
+                        document.write(html);
+                        document.close();
+                    });
+                }
+            })
+            .catch(error => {
+                console.error('Error submitting form:', error);
+                alert('Terjadi kesalahan saat mengirim data. Silahkan coba lagi.');
+                
+                // Show buttons again and hide loading
+                document.getElementById('masukButton').style.display = 'inline-block';
+                document.getElementById('keluarButton').style.display = 'inline-block';
+                document.getElementById('loadingButton').style.display = 'none';
+            });
+        
     }
 
     function toggleKmInput(selectedOption) {
@@ -380,9 +498,6 @@
         // Show or hide the KM input based on the selection
         kmInputDiv.style.display = isGASelected ? 'block' : 'none';
     }
-
-    var types = document.getElementById('data');
-    console.log(types)
 
     function validateKM() {
         const kmValue = document.getElementById('kmInput').value;
@@ -399,6 +514,13 @@
     
         return true;  // Allow form submission
     }
+    
+    // Clean up resources when page is unloadeds
+    window.addEventListener('beforeunload', function() {
+        if (stream) {
+            stream.getTracks().forEach(track => track.stop());
+        }
+    });
 </script>
 
 {% endblock %}
