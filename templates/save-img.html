@@ -52,9 +52,6 @@
                         <button type="button" id="startCamera" class="btn-lg btn btn-primary">Kamera</button>
                         <button type="button" id="capturePhoto" class="btn-lg btn btn-primary" disabled hidden>Ambil Foto</button>
                         <button type="button" id="retakePhoto" class="btn-lg btn btn-warning" style="display: none;">Foto Ulang</button>
-                        <a href="javascript:location.reload()">
-                            <button type="button" class="btn-lg btn btn-danger">Refresh</button>
-                        </a>
                     </div>
                     
                     <!-- Hidden file input (will be filled programmatically) -->
@@ -164,6 +161,17 @@
             <img src="{{ data }}" alt="Captured Image" class="img-thumbnail mx-auto d-block" style="max-width: 700-x;">
         </div>
     {% endif %}
+    
+    <div class="mb-2 text-center">
+        <a href="https://sttbekasi.com/ocr/save_img">
+            <button type="button" class="btn-lg btn btn-danger">Refresh</button>
+        </a>
+    </div>
+
+    <!-- 
+        go to https://sttbekasi.com/ocr/save_img
+        after wait 5 sec
+    -->
 
     <hr class="bg-danger border-3 border-top border-dark" />
     <h5 class="mt-3 text-center">Data Foto Diproses</h5>
@@ -225,6 +233,7 @@
 
     window.onload = function() {
         checkType();  // Call checkType when the page loads
+        fetchOCRData();
         
         // Initialize video and canvas elements
         video = document.getElementById('webcam');
@@ -380,7 +389,7 @@
         })
         .catch(error => console.error('Error fetching data:', error));
     }
-    setInterval(fetchOCRData, 10000);
+    // setInterval(fetchOCRData, 10000);
 
     var types = document.getElementById('data');
     console.log(types)
