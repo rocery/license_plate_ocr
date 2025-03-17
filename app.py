@@ -332,6 +332,10 @@ def save_img():
                 confidence = fast_alpr[0]
                 ocr_result = fast_alpr[5]
                 
+                # Jika confidence kurang dari 0.7, return false
+                if confidence < 0.7:
+                    return render_template('save-img.html', message='Hasil Pembacaan Rendah, Mohon Untuk Input Ulang.', message_type='danger', label=fast_alpr[5], confidence=confidence)
+                
                 print("Data Asli")
                 print(f"OCR: {confidence}")
                 print(f"CNF: {ocr_result}")
